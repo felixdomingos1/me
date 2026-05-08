@@ -13,25 +13,44 @@ export function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    setSubmitStatus('success');
-    setIsSubmitting(false);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-
-    setTimeout(() => setSubmitStatus('idle'), 3000);
+    try {
+      setIsSubmitting(true);
+      setSubmitStatus('idle');
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (!response.ok) {
+        throw new Error('Erro ao enviar');
+      }
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
+      setTimeout(() => {
+        setSubmitStatus('idle');
+      }, 3000);
+    } catch (error) {
+      console.error(error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     { icon: <Mail className="w-5 h-5" />, label: 'Email', value: 'felixsdomingos93@gmail.com', href: 'mailto:felixsdomingos93@gmail.com', color: 'hover:bg-red-500/20' },
     { icon: <Phone className="w-5 h-5" />, label: 'Telefone', value: '+244 926 195 572', href: 'tel:+244926195572', color: 'hover:bg-green-500/20' },
     { icon: <MapPin className="w-5 h-5" />, label: 'Localização', value: 'Benfica, Luanda - Angola', href: null, color: 'hover:bg-blue-500/20' },
-    { icon: <Clock className="w-5 h-5" />, label: 'Disponibilidade', value: 'Seg-Sex: 9h - 18h (WAT)', href: null, color: 'hover:bg-yellow-500/20' },
+    { icon: <Clock className="w-5 h-5" />, label: 'Disponibilidade', value: 'Dom-Sex: 00h - 18h (WAT)', href: null, color: 'hover:bg-yellow-500/20' },
   ];
 
   const socialLinks = [
