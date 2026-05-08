@@ -64,25 +64,37 @@ export default function Home() {
           <section className="w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-10 lg:py-26">
             <div className="mx-auto max-w-7xl">
               <div className="grid grid-cols-1 gap-6 lg:grid-cols-[360px_minmax(0,1fr)] xl:grid-cols-[400px_minmax(0,1fr)] 2xl:grid-cols-[420px_minmax(0,1fr)] items-start">
-                {/* LEFT */}
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.45 }}
-                  className="w-full"
+                <div
+                  className="lg:sticky lg:top-24 w-full"
+                  style={{ alignSelf: 'start' }}
                 >
-                  <ProfileBoard />
-                </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.45 }}
+                    className="w-full"
+                  >
+                    <ProfileBoard />
+                  </motion.div>
+                </div>
 
-                {/* RIGHT */}
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.45, delay: 0.1 }}
-                  className="min-w-0 w-full overflow-hidden"
+                <div
+                  className="min-w-0 w-full overflow-y-auto"
+                  style={{
+                    maxHeight: 'calc(100vh - 120px)',
+                    scrollbarWidth: 'thin',
+                    scrollbarColor: 'rgba(0, 242, 254, 0.5) rgba(255, 255, 255, 0.1)'
+                  }}
                 >
-                  <ReadmeSection />
-                </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.45, delay: 0.1 }}
+                    className="min-w-0 w-full overflow-hidden"
+                  >
+                    <ReadmeSection />
+                  </motion.div>
+                </div>
               </div>
             </div>
           </section>
@@ -119,7 +131,8 @@ export default function Home() {
       <div className="relative z-10">
         <Navigation
           activeTab={activeTab}
-          setActiveTab={handleTabChange} />
+          setActiveTab={handleTabChange}
+        />
 
         <AnimatePresence mode="wait">
           <motion.div
@@ -135,7 +148,40 @@ export default function Home() {
             {renderContent()}
           </motion.div>
         </AnimatePresence>
+
+        {/* FOOTER */}
+        <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-zinc-500">
+          <p>
+            © {new Date().getFullYear()} Félix Domingos
+          </p>
+
+          <div className="mt-2 flex justify-center gap-4">
+            <a
+              href="https://github.com/felixdomingos1"
+              target="_blank"
+              className="hover:text-primary-neon transition"
+            >
+              GitHub
+            </a>
+
+            <a
+              href="mailto:felixsdemingos93@gmail.com"
+              className="hover:text-primary-neon transition"
+            >
+              Contacto
+            </a>
+
+            <a
+              href="https://felixdomingos.vercel.app"
+              target="_blank"
+              className="hover:text-primary-neon transition"
+            >
+              Portfolio
+            </a>
+          </div>
+        </div>
       </div>
+
     </main>
   );
 }

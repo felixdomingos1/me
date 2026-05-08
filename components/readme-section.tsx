@@ -348,8 +348,11 @@ export function ReadmeSection() {
 
   return (
     <div className="w-full max-w-full overflow-hidden rounded-[28px] border border-white/10 bg-[#050507] shadow-2xl transition-all duration-500 hover:border-primary-neon/20">
+
       {/* HEADER */}
-      <div className="flex flex-col gap-4 border-b border-white/10 bg-black/40 px-4 py-4 backdrop-blur-xl sm:px-5 lg:flex-row lg:items-center lg:justify-between">
+      <div className="sticky top-0 z-50 flex items-center justify-between border-b border-white/10 bg-black/60 px-4 py-4 backdrop-blur-xl sm:px-5">
+
+        {/* 🔒 FIXO (lado esquerdo) */}
         <div className="flex items-center gap-3 overflow-hidden">
           <div className="flex shrink-0 gap-1.5">
             <div className="h-3 w-3 rounded-full bg-red-500/70" />
@@ -358,9 +361,7 @@ export function ReadmeSection() {
           </div>
 
           <div className="flex min-w-0 items-center gap-2 font-mono text-[10px] sm:text-[11px]">
-            <span className="text-primary-neon">
-              ➜
-            </span>
+            <span className="text-primary-neon">➜</span>
 
             <span className="truncate text-zinc-500">
               ~/portfolio/
@@ -372,18 +373,16 @@ export function ReadmeSection() {
           </div>
         </div>
 
+        {/* 🔓 SCROLL NORMAL (lado direito) */}
         <a
           href="/cv/felix-domingos-cv.pdf"
           download
-          className="flex w-full items-center justify-center gap-2 rounded-xl border border-primary-neon/20 bg-primary-neon/10 px-4 py-2 text-[11px] font-semibold text-primary-neon transition-all duration-300 hover:bg-primary-neon hover:text-black sm:w-fit"
+          className="flex items-center justify-center gap-2 rounded-xl border border-primary-neon/20 bg-primary-neon/10 px-4 py-2 text-[11px] font-semibold text-primary-neon transition-all duration-300 hover:bg-primary-neon hover:text-black"
         >
           <ExternalLink className="h-3.5 w-3.5" />
-
           Download Resume
         </a>
       </div>
-
-      {/* BODY */}
       <div className="space-y-6 p-4 sm:space-y-8 sm:p-6 lg:p-8">
         {/* HERO */}
         <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-primary-neon/10 via-transparent to-accent-purple/10 p-4 sm:p-6">
