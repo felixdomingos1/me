@@ -12,6 +12,7 @@ type Project = {
   tech: string[];
   image: string;
   liveUrl: string;
+  hasImage: boolean;
   featured?: boolean;
   category: 'dev' | 'design' | 'mentorship' | 'challenge' | 'legacy';
 };
@@ -28,6 +29,7 @@ const projects: Project[] = [
     image: '/projects/mobinads.png',
     liveUrl: 'https://mobinads.cloud',
     featured: true,
+    hasImage: true,
     category: 'dev'
   },
   {
@@ -35,6 +37,7 @@ const projects: Project[] = [
     title: 'Kiala Jobs',
     description: 'Plataforma de recrutamento e empregos para Angola e África',
     tech: ['Next.js', 'Node.js', 'Golang', 'MongoDB', 'ElasticSearch'],
+    hasImage: true,
     image: '/projects/kialajobs.png',
     liveUrl: 'https://kialajobs.com',
     featured: true,
@@ -47,6 +50,7 @@ const projects: Project[] = [
     tech: ['Next.js', 'React Native', 'Node.js', 'PostgreSQL', 'Stripe'],
     image: '/projects/digitalsindico.png',
     liveUrl: 'https://digitalsindico.com',
+    hasImage: true,
     featured: true,
     category: 'dev'
   },
@@ -57,6 +61,7 @@ const projects: Project[] = [
     tech: ['React', 'TypeScript', 'Go', 'Tailwind CSS'],
     image: '/projects/skylla.png',
     liveUrl: 'https://skylla.app',
+    hasImage: true,
     featured: true,
     category: 'dev'
   },
@@ -68,6 +73,7 @@ const projects: Project[] = [
     image: '/projects/flixhome.png',
     liveUrl: 'https://flixhome.app',
     featured: true,
+    hasImage: true,
     category: 'dev'
   },
   {
@@ -77,6 +83,7 @@ const projects: Project[] = [
     tech: ['React', 'Next.js', 'Mapbox', 'Tailwind CSS'],
     image: '/projects/neatxpress.png',
     liveUrl: 'https://neatxpress.org',
+    hasImage: true,
     featured: true,
     category: 'dev'
   },
@@ -91,6 +98,7 @@ const projects: Project[] = [
     tech: ['Next.js', 'API', 'Tailwind'],
     image: '/projects/findermovie.png',
     liveUrl: 'https://findermovie.vercel.app',
+    hasImage: false,
     category: 'challenge'
   },
   {
@@ -100,6 +108,7 @@ const projects: Project[] = [
     tech: ['React', 'Node.js'],
     image: '/projects/go-burguer.png',
     liveUrl: 'https://goo-burguer.vercel.app/',
+    hasImage: true,
     category: 'challenge'
   },
   {
@@ -109,6 +118,7 @@ const projects: Project[] = [
     tech: ['Next.js', 'TypeScript'],
     image: '/projects/iasd.png',
     liveUrl: 'https://iasdkm12.vercel.app/',
+    hasImage: true,
     category: 'challenge'
   },
 
@@ -122,6 +132,7 @@ const projects: Project[] = [
     tech: ['Figma', 'UI/UX'],
     image: '/projects/figma-finance.png',
     liveUrl: 'https://www.figma.com/design/EVKUv6UKSXbDAGrkdZKvRb/App-de-finan%C3%A7as',
+    hasImage: true,
     category: 'design'
   },
   {
@@ -131,6 +142,7 @@ const projects: Project[] = [
     tech: ['Figma', 'UI Design'],
     image: '/projects/arena-game.png',
     liveUrl: 'https://www.figma.com/design/TC15OaAE65dR6Se4DINX8g/Arena-Game',
+    hasImage: true,
     category: 'design'
   },
   {
@@ -140,6 +152,7 @@ const projects: Project[] = [
     tech: ['Figma', 'UI/UX'],
     image: '/projects/kitoko.png',
     liveUrl: 'https://www.figma.com/design/6me7WMd05QJ2WXVsXBNs9Q/Sistema---Kitoko',
+    hasImage: true,
     category: 'design'
   },
 
@@ -153,6 +166,7 @@ const projects: Project[] = [
     tech: ['Figma', 'Community'],
     image: '/projects/rocketseat-mentoria.png',
     liveUrl: 'https://www.figma.com/design/aLPUHMkSgLRmkDkUy3wpEv/Portfolio-Dev--Community-',
+    hasImage: true,
     category: 'mentorship'
   },
 
@@ -166,8 +180,60 @@ const projects: Project[] = [
     tech: ['React', 'CSS'],
     image: '/projects/portfolio-old.png',
     liveUrl: 'https://felixdomingos.vercel.app/',
+    hasImage: true,
     category: 'legacy'
-  }
+  },
+  // ======================
+  // 🧠 OPEN SOURCE / BACKEND / ENGENHARIA
+  // ======================
+  {
+    id: 18,
+    title: 'Delégua - Linguagem de Programação',
+    description:
+      'Linguagem de programação em português com múltiplos dialetos e interpretador próprio (open-source)',
+    tech: ['TypeScript', 'ANTLR', 'Node.js', 'Open Source'],
+    image: '/projects/delegua.png',
+    liveUrl: 'https://github.com/felixdomingos1/delegua',
+    hasImage: false,
+    featured: false,
+    category: 'dev',
+  },
+  {
+    id: 19,
+    title: 'API Federação',
+    description:
+      'Arquitetura backend em .NET com separação em camadas (Core, Infra, Application, API)',
+    tech: ['C#', '.NET', 'Clean Architecture', 'Microservices'],
+    image: '/projects/api-federacao.png',
+    liveUrl: 'https://github.com/felixdomingos1/api-federacao',
+    hasImage: false,
+    featured: false,
+    category: 'dev'
+  },
+  {
+    id: 20,
+    title: 'Backend Base System',
+    description:
+      'Estrutura backend escalável com Node.js, Prisma e arquitetura modular pronta para produção',
+    tech: ['Node.js', 'TypeScript', 'Prisma', 'MySQL'],
+    image: '/projects/backend.png',
+    liveUrl: 'https://github.com/felixdomingos1/Backend',
+    hasImage: false,
+    featured: false,
+    category: 'dev'
+  },
+  {
+    id: 21,
+    title: 'Chat Comunitário',
+    description:
+      'Plataforma de chat para comunidades com Next.js, Prisma e arquitetura moderna fullstack',
+    tech: ['Next.js', 'Prisma', 'PostgreSQL', 'Tailwind'],
+    image: '/projects/chatcomunitario.png',
+    liveUrl: 'https://github.com/felixdomingos1/ChatComunitario',
+    hasImage: false,
+    featured: false,
+    category: 'dev'
+  },
 ];
 
 const categories = [
@@ -232,14 +298,22 @@ export function ProjectSection() {
               transition={{ delay: index * 0.05 }}
               className="group bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-primary-neon/40"
             >
-              <div className="h-40 relative">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition"
-                />
-              </div>
+              {project.hasImage ? (
+                <div className="h-40 relative">
+                  <Image
+                    src={project.image!}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition"
+                  />
+                </div>
+              ) : (
+                <div className="h-1 flex items-center justify-center bg-white/5 border-b border-white/10">
+                  {/* <span className="text-white/40 text-sm">
+                    Sem preview disponível
+                  </span> */}
+                </div>
+              )}
 
               <div className="p-5">
                 <h4 className="text-white font-semibold group-hover:text-primary-neon">
