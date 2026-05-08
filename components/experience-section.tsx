@@ -194,9 +194,9 @@ function TechBadge({ tech }: { tech: string }) {
 
 export function ExperienceSection() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-
+  const totalYears = `${new Date().getFullYear() - 2021}+`;
   const stats = {
-    totalYears: '5+',
+    totalYears: totalYears,
     companies: experiences.length,
     currentRole: experiences.filter((e) => e.type === 'current').length,
     techStack: [...new Set(experiences.flatMap((e) => e.techStack))].length,

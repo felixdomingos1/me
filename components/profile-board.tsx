@@ -59,8 +59,7 @@ export function ProfileBoard() {
           alt="Cover"
           fill
           priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-
+          sizes="100vw"
           className="object-cover object-center"
         />
 
@@ -100,11 +99,12 @@ export function ProfileBoard() {
   md:border-[6px]
   border-black
   bg-black
-">  <Image
+">              <Image
                   src="/img/fundo_black.png"
                   alt="Félix Sanjala Domingos"
                   fill
                   priority
+                  sizes="(max-width: 768px) 180px, (max-width: 1024px) 220px, 280px"
                   className="object-cover object-top scale-110"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent" />
