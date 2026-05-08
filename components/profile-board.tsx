@@ -53,7 +53,7 @@ export function ProfileBoard() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-linear(circle_at_top_left,rgba(0,242,254,0.12),transparent_35%),radial-linear(circle_at_bottom_right,rgba(189,0,255,0.12),transparent_35%)]" />
 
       {/* CAPA */}
-      <div className="relative h-72 overflow-visible">
+      <div className="relative h-52 sm:h-60 md:h-72 overflow-visible">
         <Image
           src="/img/capa.png"
           alt="Cover"
@@ -66,8 +66,15 @@ export function ProfileBoard() {
 
         <div className="absolute -top-20 -left-20 h-60 w-60 rounded-full bg-primary-neon/20 blur-3xl" />
         <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-accent-purple/20 blur-3xl" />
-
-        <div className="absolute -bottom-28 left-1/2 z-20 -translate-x-1/2">
+        <div className="
+  absolute
+  -bottom-20
+  sm:-bottom-24
+  md:-bottom-28
+  left-1/2
+  z-20
+  -translate-x-1/2
+">
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -75,8 +82,23 @@ export function ProfileBoard() {
           >
             <div className="absolute -inset-6 rounded-full bg-linear-to-r from-primary-neon to-accent-purple blur-3xl opacity-70" />
             <div className="relative rounded-full bg-linear-to-br from-primary-neon to-accent-purple p-1 shadow-[0_0_60px_rgba(0,242,254,0.35)]">
-              <div className="relative h-56 w-56 overflow-hidden rounded-full border-[6px] border-black bg-black md:h-64 md:w-64">
-                <Image
+              <div className="
+  relative
+  h-36
+  w-36
+  sm:h-44
+  sm:w-44
+  md:h-56
+  md:w-56
+  lg:h-64
+  lg:w-64
+  overflow-hidden
+  rounded-full
+  border-4
+  md:border-[6px]
+  border-black
+  bg-black
+">  <Image
                   src="/img/fundo_black.png"
                   alt="Félix Sanjala Domingos"
                   fill
@@ -90,13 +112,33 @@ export function ProfileBoard() {
         </div>
       </div>
 
-      {/* CONTENT */}
-      <div className="relative z-10 px-6 pb-10 pt-36 text-center">
-        <h1 className="text-3xl font-black text-white">
+      {/* CONTENT */}<div className="
+  relative
+  z-10
+  px-4
+  sm:px-6
+  pb-8
+  sm:pb-10
+  pt-24
+  sm:pt-28
+  md:pt-36
+  text-center
+"><h1 className="
+  text-2xl
+  sm:text-3xl
+  md:text-4xl
+  font-black
+  text-white
+  leading-tight
+">
           Félix Sanjala Domingos
         </h1>
-
-        <p className="text-primary-neon mt-1">
+        <p className="
+  text-primary-neon
+  mt-2
+  text-sm
+  sm:text-base
+">
           Fullstack Developer & UI/UX Specialist
         </p>
 
@@ -105,8 +147,13 @@ export function ProfileBoard() {
           Benfica, Luanda - Angola
         </div>
 
-        {/* STATS */}
-        <div className="mt-8 grid grid-cols-3 gap-3">
+        {/* STATS */}<div className="
+  mt-6
+  grid
+  grid-cols-1
+  sm:grid-cols-3
+  gap-3
+">
           {stats.map((s, i) => (
             <div key={i} className="rounded-xl border border-white/10 bg-white/5 p-3">
               <div className="flex justify-center text-primary-neon">
@@ -118,11 +165,29 @@ export function ProfileBoard() {
           ))}
         </div>
 
-        {/* ACTIONS */}
-        <div className="mt-8 flex gap-3 justify-center">
+        {/* ACTIONS */}<div className="
+  mt-8
+  flex
+  flex-col
+  sm:flex-row
+  gap-3
+  justify-center
+">
           <button
             onClick={handleDownloadCV}
-            className="rounded-xl bg-linear-to-r from-primary-neon to-accent-purple px-5 py-3 text-sm font-bold text-white"
+            className="
+  rounded-xl
+  bg-linear-to-r
+  from-primary-neon
+  to-accent-purple
+  px-5
+  py-3
+  text-sm
+  font-bold
+  text-white
+  w-full
+  sm:w-auto
+"
           >
             <Download className="inline w-4 h-4 mr-2" />
             Download CV

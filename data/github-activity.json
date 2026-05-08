@@ -1,0 +1,124 @@
+{
+  "contributions": {
+    "2020": {
+      "total": 842,
+      "months": {
+        "Jan": 48,
+        "Fev": 52,
+        "Mar": 64,
+        "Abr": 71,
+        "Mai": 73,
+        "Jun": 79,
+        "Jul": 68,
+        "Ago": 74,
+        "Set": 66,
+        "Out": 81,
+        "Nov": 79,
+        "Dez": 87
+      },
+      "daily": "active_daily_2020"
+    },
+    "2021": {
+      "total": 1186,
+      "months": {
+        "Jan": 84,
+        "Fev": 92,
+        "Mar": 96,
+        "Abr": 101,
+        "Mai": 98,
+        "Jun": 102,
+        "Jul": 94,
+        "Ago": 97,
+        "Set": 91,
+        "Out": 108,
+        "Nov": 110,
+        "Dez": 113
+      },
+      "daily": "active_daily_2021"
+    },
+    "2022": {
+      "total": 1464,
+      "months": {
+        "Jan": 112,
+        "Fev": 118,
+        "Mar": 123,
+        "Abr": 126,
+        "Mai": 119,
+        "Jun": 122,
+        "Jul": 115,
+        "Ago": 124,
+        "Set": 117,
+        "Out": 131,
+        "Nov": 126,
+        "Dez": 131
+      },
+      "daily": "active_daily_2022"
+    },
+    "2023": {
+      "total": 1689,
+      "months": {
+        "Jan": 132,
+        "Fev": 138,
+        "Mar": 144,
+        "Abr": 149,
+        "Mai": 141,
+        "Jun": 138,
+        "Jul": 132,
+        "Ago": 146,
+        "Set": 139,
+        "Out": 151,
+        "Nov": 142,
+        "Dez": 137
+      },
+      "daily": "active_daily_2023"
+    },
+    "2024": {
+      "total": 1842,
+      "months": {
+        "Jan": 142,
+        "Fev": 158,
+        "Mar": 165,
+        "Abr": 172,
+        "Mai": 168,
+        "Jun": 145,
+        "Jul": 138,
+        "Ago": 156,
+        "Set": 149,
+        "Out": 162,
+        "Nov": 151,
+        "Dez": 136
+      },
+      "daily": "active_daily_2024"
+    },
+    "2025": {
+      "total": 2156,
+      "months": {
+        "Jan": 189,
+        "Fev": 195,
+        "Mar": 203,
+        "Abr": 198,
+        "Mai": 205,
+        "Jun": 187,
+        "Jul": 179,
+        "Ago": 192,
+        "Set": 186,
+        "Out": 201,
+        "Nov": 194,
+        "Dez": 227
+      },
+      "daily": "active_daily_2025"
+    },
+    "2026": {
+      "total": 847,
+      "months": {
+        "Jan": 234,
+        "Fev": 218,
+        "Mar": 245,
+        "Abr": 150,
+        "Mai": 0
+      },
+      "daily": "active_daily_2026",
+      "note": "Até 08 de Maio de 2026"
+    }
+  }
+}

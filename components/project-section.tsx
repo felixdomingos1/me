@@ -18,9 +18,6 @@ type Project = {
 };
 
 const projects: Project[] = [
-  // ======================
-  // 🚀 DESENVOLVIMENTO
-  // ======================
   {
     id: 1,
     title: 'Mobinads Cloud',
@@ -88,9 +85,6 @@ const projects: Project[] = [
     category: 'dev'
   },
 
-  // ======================
-  // 🧪 DESAFIOS
-  // ======================
   {
     id: 7,
     title: 'FinderMovie',
@@ -122,9 +116,6 @@ const projects: Project[] = [
     category: 'challenge'
   },
 
-  // ======================
-  // 🎨 DESIGN
-  // ======================
   {
     id: 10,
     title: 'App Financeiro (Mentoria)',
@@ -156,9 +147,6 @@ const projects: Project[] = [
     category: 'design'
   },
 
-  // ======================
-  // 🧠 MENTORIA
-  // ======================
   {
     id: 13,
     title: 'Mentoria Rocketseat',
@@ -170,9 +158,6 @@ const projects: Project[] = [
     category: 'mentorship'
   },
 
-  // ======================
-  // 🕰️ LEGADO
-  // ======================
   {
     id: 14,
     title: 'Portfolio Antigo',
@@ -183,9 +168,6 @@ const projects: Project[] = [
     hasImage: true,
     category: 'legacy'
   },
-  // ======================
-  // 🧠 OPEN SOURCE / BACKEND / ENGENHARIA
-  // ======================
   {
     id: 18,
     title: 'Delégua - Linguagem de Programação',
