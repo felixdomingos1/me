@@ -1,6 +1,6 @@
 'use client';
 
-import { BaseSkeleton, SkeletonLine, SkeletonCircle } from './base-skeleton';
+import { SkeletonLine, SkeletonCircle } from './base-skeleton';
 
 export function ExperienceSkeleton() {
   return (
@@ -20,7 +20,7 @@ export function ExperienceSkeleton() {
         {/* Stats */}
         <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 mb-14">
           {Array.from({ length: 4 }).map((_, i) => (
-            <div key={i} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-center">
+            <div key={i} className="rounded-2xl border border-white/10 bg-white/3 p-5 text-center">
               <SkeletonCircle size="w-8 h-8" className="mx-auto mb-3" />
               <SkeletonLine width="w-20" height="h-8" className="mx-auto mb-1" />
               <SkeletonLine width="w-16" height="h-3" className="mx-auto" />
@@ -36,7 +36,7 @@ export function ExperienceSkeleton() {
                 <SkeletonCircle size="w-12 h-12" />
               </div>
               <div className={`w-full md:w-[calc(50%-3rem)] ${i % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'}`}>
-                <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.02] p-5 sm:p-6">
+                <div className="rounded-3xl border border-white/10 bg-linear-to-br from-white/4 to-white/2 p-5 sm:p-6">
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between mb-5">
                     <div className="flex-1">
                       <div className="flex flex-wrap items-center gap-2 mb-2">

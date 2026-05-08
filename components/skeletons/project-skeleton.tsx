@@ -1,6 +1,6 @@
 'use client';
 
-import { BaseSkeleton, SkeletonLine } from './base-skeleton';
+import { SkeletonLine } from './base-skeleton';
 
 export function ProjectSkeleton() {
   return (

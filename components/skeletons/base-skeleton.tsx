@@ -15,7 +15,7 @@ export function BaseSkeleton({ className = '', children }: BaseSkeletonProps) {
       exit={{ opacity: 0 }}
       className={`relative overflow-hidden bg-[#050507] border border-white/10 rounded-2xl ${className}`}
     >
-      <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.5s_infinite] bg-linear-to-r from-transparent via-white/5 to-transparent" />
       {children}
     </motion.div>
   );

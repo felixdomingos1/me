@@ -78,17 +78,17 @@ export function ReadmeSkeleton() {
 
           {/* Calendar Grid Skeleton */}
           <div className="w-full overflow-x-auto pb-4">
-            <div className="min-w-[680px]">
+            <div className="min-w-170">
               <div className="mb-3 flex justify-between px-8">
                 {Array.from({ length: 12 }).map((_, i) => (
                   <SkeletonLine key={i} width="w-8" height="h-3" />
                 ))}
               </div>
-              <div className="flex gap-[3px]">
+              <div className="flex gap-0.75">
                 {Array.from({ length: 52 }).map((_, i) => (
-                  <div key={i} className="flex flex-col gap-[3px]">
+                  <div key={i} className="flex flex-col gap-0.75">
                     {Array.from({ length: 7 }).map((_, j) => (
-                      <div key={j} className="h-[11px] w-[11px] rounded-[2px] bg-white/5 animate-pulse" />
+                      <div key={j} className="h-2.75 w-2.75 rounded-xs bg-white/5 animate-pulse" />
                     ))}
                   </div>
                 ))}

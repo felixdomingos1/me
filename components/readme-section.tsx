@@ -12,10 +12,10 @@ import {
   Smartphone,
   Star,
   Users,
-  Briefcase,
   Globe,
   Trophy,
   Sparkles,
+  Briefcase,
 } from 'lucide-react';
 
 import { useMemo, useState } from 'react';
@@ -302,19 +302,19 @@ export function ReadmeSection() {
       company: 'Kiala Jobs',
       role:
         'Senior Software Engineer',
-      badge: 'Backend',
+      badge: 'Tech Lead',
     },
     {
       company: 'Digital Síndico',
       role:
         'Chief Technology Officer',
-      badge: 'Fullstack',
+      badge: 'Tech Lead',
     },
     {
       company: '42 Luanda',
       role: 'Cadete',
       badge:
-        'Software Engineering',
+        'Aluno',
     },
   ];
 
@@ -469,7 +469,7 @@ export function ReadmeSection() {
             {stacks.map((stack, i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:border-primary-neon/20"
+                className="rounded-2xl border border-white/10 bg-white/3 p-5 transition hover:border-primary-neon/20"
               >
                 <div className="mb-3 flex items-center gap-3">
                   {stack.icon}
@@ -488,7 +488,7 @@ export function ReadmeSection() {
         </section>
 
         {/* GITHUB */}
-        <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-6">
+        <section className="rounded-2xl border border-white/10 bg-white/3 p-4 sm:p-6">
           <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-center gap-3">
               <div className="rounded-xl border border-primary-neon/20 bg-primary-neon/10 p-2">
@@ -515,8 +515,8 @@ export function ReadmeSection() {
                     setSelectedYear(year)
                   }
                   className={`rounded-lg border px-3 py-1.5 text-[11px] font-medium transition-all duration-300 sm:text-xs ${selectedYear === year
-                      ? 'border-primary-neon bg-primary-neon text-black'
-                      : 'border-white/10 bg-white/5 text-zinc-400 hover:bg-white/10 hover:text-white'
+                    ? 'border-primary-neon bg-primary-neon text-black'
+                    : 'border-white/10 bg-white/5 text-zinc-400 hover:bg-white/10 hover:text-white'
                     }`}
                 >
                   {year}
@@ -555,24 +555,24 @@ export function ReadmeSection() {
 
           {/* CALENDAR */}
           <div className="w-full overflow-x-auto pb-4">
-            <div className="min-w-[700px] md:min-w-[760px]">
+            <div className="min-w-175 md:min-w-190">
               <div className="mb-3 flex justify-between px-2 sm:px-8">
                 {months.map((month) => (
                   <span
                     key={month}
-                    className="min-w-[32px] text-[9px] text-zinc-500 sm:min-w-[40px] sm:text-[10px]"
+                    className="min-w-8 text-[9px] text-zinc-500 sm:min-w-10 sm:text-[10px]"
                   >
                     {month}
                   </span>
                 ))}
               </div>
 
-              <div className="flex gap-[2px] sm:gap-[3px]">
+              <div className="flex gap-xs sm:gap-0.75">
                 {weeksData.map(
                   (week, weekIndex) => (
                     <div
                       key={weekIndex}
-                      className="flex flex-col gap-[2px] sm:gap-[3px]"
+                      className="flex flex-col gap-xs sm:gap-0.75"
                     >
                       {week.map(
                         (day, dayIndex) => (
@@ -583,11 +583,11 @@ export function ReadmeSection() {
                             )}: ${day.count
                               } contribuições`}
                             className={`
-                              h-[9px]
-                              w-[9px]
-                              sm:h-[11px]
-                              sm:w-[11px]
-                              rounded-[2px]
+                              h-2.25
+                              w-2.25
+                              sm:h-2.75
+                              sm:w-2.75
+                              rounded-xs
                               ${getActivityColor(
                               day.count
                             )}
@@ -611,11 +611,11 @@ export function ReadmeSection() {
                   <span>Menos</span>
 
                   <div className="flex gap-1">
-                    <div className="h-3 w-3 rounded-[2px] bg-[#161b22]" />
-                    <div className="h-3 w-3 rounded-[2px] bg-green-900/40" />
-                    <div className="h-3 w-3 rounded-[2px] bg-green-700/60" />
-                    <div className="h-3 w-3 rounded-[2px] bg-green-500/80" />
-                    <div className="h-3 w-3 rounded-[2px] bg-green-400" />
+                    <div className="h-3 w-3 rounded-xs bg-[#161b22]" />
+                    <div className="h-3 w-3 rounded-xs bg-green-900/40" />
+                    <div className="h-3 w-3 rounded-xs bg-green-700/60" />
+                    <div className="h-3 w-3 rounded-xs bg-green-500/80" />
+                    <div className="h-3 w-3 rounded-xs bg-green-400" />
                   </div>
 
                   <span>Mais</span>
@@ -629,6 +629,47 @@ export function ReadmeSection() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section>
+          <div className="mb-5 flex items-center gap-3">
+            <div className="rounded-xl border border-primary-neon/20 bg-primary-neon/10 p-2">
+              <Briefcase className="h-4 w-4 text-primary-neon" />
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-white">
+                Experiência
+              </h3>
+
+              <p className="text-xs text-zinc-500">
+                Empresas e posições ocupadas
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            {experiences.map((exp, i) => (
+              <div
+                key={i}
+                className="rounded-2xl border border-white/10 bg-white/3 p-4 transition hover:border-primary-neon/20"
+              >
+                <div className="flex items-center justify-between">
+                  <h4 className="text-sm font-semibold text-white">
+                    {exp.company}
+                  </h4>
+
+                  <span className="rounded-full border border-primary-neon/20 bg-primary-neon/10 px-2 py-0.5 text-[10px] text-primary-neon">
+                    {exp.badge}
+                  </span>
+                </div>
+
+                <p className="mt-2 text-xs text-zinc-400">
+                  {exp.role}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -654,7 +695,7 @@ export function ReadmeSection() {
             {achievements.map((item, i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-zinc-300"
+                className="rounded-2xl border border-white/10 bg-white/3 p-4 text-sm text-zinc-300"
               >
                 ✨ {item}
               </div>
@@ -666,7 +707,7 @@ export function ReadmeSection() {
         <section className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <a
             href="mailto:felixsdemingos93@gmail.com"
-            className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition-all duration-300 hover:border-primary-neon/20 hover:bg-primary-neon/5"
+            className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/3 p-4 transition-all duration-300 hover:border-primary-neon/20 hover:bg-primary-neon/5"
           >
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-neon/10">
               <Mail className="h-4 w-4 text-primary-neon" />
@@ -685,7 +726,7 @@ export function ReadmeSection() {
 
           <a
             href="tel:+244926195572"
-            className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition-all duration-300 hover:border-primary-neon/20 hover:bg-primary-neon/5"
+            className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/3 p-4 transition-all duration-300 hover:border-primary-neon/20 hover:bg-primary-neon/5"
           >
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-neon/10">
               <Phone className="h-4 w-4 text-primary-neon" />

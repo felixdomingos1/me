@@ -1,6 +1,6 @@
 'use client';
 
-import { BaseSkeleton, SkeletonLine, SkeletonCircle } from './base-skeleton';
+import { SkeletonLine, SkeletonCircle } from './base-skeleton';
 
 export function AboutSkeleton() {
   return (

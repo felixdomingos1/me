@@ -180,7 +180,7 @@ function TechBadge({ tech }: { tech: string }) {
         rounded-lg
         text-[10px] sm:text-[11px]
         border border-white/10
-        bg-white/[0.04]
+        bg-white/4
         text-zinc-300
         transition-all duration-300
         hover:border-primary-neon/30
@@ -227,7 +227,7 @@ export function ExperienceSection() {
             </span>
           </h2>
 
-          <div className="w-24 h-1 rounded-full bg-gradient-to-r from-primary-neon to-accent-purple mx-auto mt-5" />
+          <div className="w-24 h-1 rounded-full bg-linear-to-r from-primary-neon to-accent-purple mx-auto mt-5" />
 
           <p className="mt-6 max-w-2xl mx-auto text-sm sm:text-base text-zinc-400 leading-relaxed">
             Mais de 5 anos desenvolvendo soluções modernas,
@@ -273,7 +273,7 @@ export function ExperienceSection() {
                 group relative
                 rounded-2xl
                 border border-white/10
-                bg-white/[0.03]
+                bg-white/3
                 backdrop-blur-xl
                 p-5
                 text-center
@@ -283,7 +283,7 @@ export function ExperienceSection() {
                 hover:border-primary-neon/30
               "
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-neon/0 via-primary-neon/0 to-accent-purple/0 group-hover:from-primary-neon/5 group-hover:via-primary-neon/10 group-hover:to-accent-purple/5 transition-all duration-500" />
+              <div className="absolute inset-0 bg-linear-to-r from-primary-neon/0 via-primary-neon/0 to-accent-purple/0 group-hover:from-primary-neon/5 group-hover:via-primary-neon/10 group-hover:to-accent-purple/5 transition-all duration-500" />
 
               <div className="relative z-10">
                 <div className="flex justify-center text-primary-neon mb-3">
@@ -308,7 +308,7 @@ export function ExperienceSection() {
         {/* TIMELINE */}
         <div className="relative">
           {/* linha */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary-neon via-accent-purple to-transparent" />
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-linear-to-b from-primary-neon via-accent-purple to-transparent" />
 
           <div className="space-y-8 sm:space-y-10">
             {experiences.map((exp, index) => (
@@ -338,7 +338,7 @@ export function ExperienceSection() {
               >
                 {/* timeline dot */}
                 <div className="hidden md:flex absolute left-1/2 top-10 -translate-x-1/2 z-20">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary-neon to-accent-purple flex items-center justify-center shadow-lg shadow-primary-neon/30">
+                  <div className="w-12 h-12 rounded-full bg-linear-to-r from-primary-neon to-accent-purple flex items-center justify-center shadow-lg shadow-primary-neon/30">
                     {exp.icon}
                   </div>
                 </div>
@@ -354,7 +354,7 @@ export function ExperienceSection() {
                     md:w-[calc(50%-3rem)]
                     rounded-3xl
                     border border-white/10
-                    bg-gradient-to-br from-white/[0.04] to-white/[0.02]
+                    bg-linear-to-br from-white/4 to-white/2
                     backdrop-blur-xl
                     overflow-hidden
                     transition-all duration-300
@@ -364,7 +364,7 @@ export function ExperienceSection() {
                   "
                 >
                   {/* glow */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary-neon/0 via-primary-neon/0 to-accent-purple/0 hover:from-primary-neon/5 hover:via-primary-neon/10 hover:to-accent-purple/5 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-linear-to-r from-primary-neon/0 via-primary-neon/0 to-accent-purple/0 hover:from-primary-neon/5 hover:via-primary-neon/10 hover:to-accent-purple/5 transition-all duration-500" />
 
                   <div className="relative z-10 p-5 sm:p-6">
                     {/* top */}
@@ -481,7 +481,7 @@ export function ExperienceSection() {
           viewport={{ once: true }}
           className="mt-16 flex justify-center"
         >
-          <div className="flex flex-wrap items-center justify-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-center backdrop-blur-xl">
+          <div className="flex flex-wrap items-center justify-center gap-3 rounded-full border border-white/10 bg-white/3 px-5 py-3 text-center backdrop-blur-xl">
             <Award className="w-4 h-4 text-primary-neon" />
 
             <span className="text-xs sm:text-sm text-zinc-300">
