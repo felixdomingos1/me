@@ -107,7 +107,7 @@ export function Navigation({
 
             {/* CV BUTTON */}
             <motion.a
-              href="/cv/felix-domingos-cv.pdf"
+              href="/cv/fullstack-felix-domingos-cv.pdf"
               download
               whileHover={{
                 scale: 1.05,
@@ -189,7 +189,7 @@ export function Navigation({
                   </div>
 
                   <motion.a
-                    href="/cv/felix-domingos-cv.pdf"
+                    href="/cv/fullstack-felix-domingos-cv.pdf"
                     download
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-full text-xs font-bold uppercase tracking-wider cursor-pointer"

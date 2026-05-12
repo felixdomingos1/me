@@ -375,7 +375,7 @@ export function ReadmeSection() {
 
         {/* 🔓 SCROLL NORMAL (lado direito) */}
         <a
-          href="/cv/felix-domingos-cv.pdf"
+          href="/cv/fullstack-felix-domingos-cv.pdf"
           download
           className="flex items-center justify-center gap-2 rounded-xl border border-primary-neon/20 bg-primary-neon/10 px-4 py-2 text-[11px] font-semibold text-primary-neon transition-all duration-300 hover:bg-primary-neon hover:text-black"
         >

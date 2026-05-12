@@ -15,11 +15,11 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export function ProfileBoard() {
   const handleDownloadCV = () => {
-    const cvUrl = '/cv/felix-domingos-cv.pdf';
+    const cvUrl = '/cv/fullstack-felix-domingos-cv.pdf';
 
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.download = 'felix-domingos-cv.pdf';
+    link.download = 'fullstack-felix-domingos-cv.pdf';
 
     document.body.appendChild(link);
     link.click();
@@ -141,9 +141,8 @@ export function ProfileBoard() {
   text-sm
   sm:text-base
 ">
-          Fullstack Developer & UI/UX Specialist
+          Co-Founder, CTO, Desenvolvedor Fullstack
         </p>
-
         <div className="mt-2 flex items-center justify-center gap-2 text-xs text-zinc-400">
           <MapPin className="h-3 w-3 text-primary-neon" />
           Benfica, Luanda - Angola
