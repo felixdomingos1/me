@@ -189,7 +189,7 @@ const getWeeksData = (
 
   const endDate =
     year === 2026
-      ? new Date(2026, 4, 8)
+      ? new Date(2026, 12, 31)
       : new Date(year, 11, 31);
 
   while (currentDate <= endDate) {
