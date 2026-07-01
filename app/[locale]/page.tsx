@@ -64,7 +64,7 @@ export default function Home() {
     switch (activeTab) {
       case 'home':
         return (
-          <section className="w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-10 lg:py-26">
+          <article className="w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-10 lg:py-26" aria-label="Home content">
             <div className="mx-auto max-w-7xl">
               <div className="grid grid-cols-1 gap-6 lg:grid-cols-[360px_minmax(0,1fr)] xl:grid-cols-[400px_minmax(0,1fr)] 2xl:grid-cols-[420px_minmax(0,1fr)] items-start">
                 <div
@@ -100,7 +100,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </section>
+          </article>
         );
 
       case 'about':
@@ -152,16 +152,16 @@ export default function Home() {
           </motion.div>
         </AnimatePresence>
 
-        {/* FOOTER */}
-        <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-zinc-500">
+        <footer className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-zinc-500">
           <p>
             {t('copyright', { year: new Date().getFullYear() })}
           </p>
 
-          <div className="mt-2 flex justify-center gap-4">
+          <nav className="mt-2 flex justify-center gap-4" aria-label="Footer links">
             <a
               href="https://github.com/felixdomingos1"
               target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-primary-neon transition"
             >
               GitHub
@@ -177,12 +177,13 @@ export default function Home() {
             <a
               href="https://felixdomingos.vercel.app"
               target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-primary-neon transition"
             >
               Portfolio
             </a>
-          </div>
-        </div>
+          </nav>
+        </footer>
       </div>
 
     </main>

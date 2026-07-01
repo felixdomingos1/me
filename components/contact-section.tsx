@@ -12,7 +12,8 @@ export function ContactSection() {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    honeypot: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -38,6 +39,7 @@ export function ContactSection() {
         email: '',
         subject: '',
         message: '',
+        honeypot: '',
       });
       setTimeout(() => {
         setSubmitStatus('idle');
@@ -172,6 +174,18 @@ export function ContactSection() {
                 {t('form.title')}
               </h3>
               <form onSubmit={handleSubmit} className="space-y-4">
+                <div aria-hidden="true" className="absolute opacity-0 -z-10" style={{ position: 'absolute', left: '-9999px' }}>
+                  <label htmlFor="honeypot">Leave this empty</label>
+                  <input
+                    id="honeypot"
+                    type="text"
+                    name="honeypot"
+                    value={formData.honeypot}
+                    onChange={(e) => setFormData({ ...formData, honeypot: e.target.value })}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
                 <div>
                   <label className="text-text-gray text-sm mb-1 block">{t('form.nameLabel')}</label>
                   <input

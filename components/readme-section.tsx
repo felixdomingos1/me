@@ -300,9 +300,9 @@ export function ReadmeSection() {
               </div>
             </div>
 
-            <h1 className="text-xl font-black leading-tight text-white sm:text-2xl lg:text-4xl">
+            <h2 className="text-xl font-black leading-tight text-white sm:text-2xl lg:text-4xl">
               {t('hero.heading')}
-            </h1>
+            </h2>
 
             <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-base">
               {t('hero.bio')}
