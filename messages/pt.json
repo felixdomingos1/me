@@ -1,0 +1,581 @@
+{
+  "metadata": {
+    "title": "Felix Domingos | Software Developer",
+    "description": "Portfolio de Felix Domingos. Transformando conceitos em experiências digitais 3D interativas."
+  },
+  "navigation": {
+    "logo": "FELIDOM.",
+    "items": {
+      "home": "Início",
+      "about": "Sobre",
+      "experience": "Experiência",
+      "projects": "Projetos",
+      "contact": "Contacto"
+    },
+    "cv": "CV"
+  },
+  "profileBoard": {
+    "name": "Félix Sanjala Domingos",
+    "title": "Co-Founder, CTO, Desenvolvedor Fullstack",
+    "location": "Benfica, Luanda - Angola",
+    "stats": {
+      "experience": "Experiência",
+      "projects": "Projetos",
+      "techStack": "Tech Stack"
+    },
+    "statsValues": {
+      "experience": "5+ anos",
+      "projects": "15+",
+      "techStack": "10+"
+    },
+    "skills": ["React/Next.js", "React Native", "Node.js", "C#/.NET", "Golang", "TypeScript"],
+    "downloadCv": "Download CV"
+  },
+  "readme": {
+    "header": {
+      "path": "~/portfolio/",
+      "filename": "README.md",
+      "downloadResume": "Download Resume"
+    },
+    "hero": {
+      "badges": ["Fullstack Developer", "UI/UX Specialist"],
+      "heading": "Construindo produtos digitais modernos, escaláveis e com foco em experiência.",
+      "bio": "Desenvolvedor Fullstack apaixonado por arquitetura de software, performance, UI/UX e sistemas modernos."
+    },
+    "stacks": {
+      "title": "Stack Tecnológica",
+      "subtitle": "Tecnologias e ecossistemas principais",
+      "items": {
+        "frontend": {
+          "name": "Frontend",
+          "items": "Next.js, React, TypeScript"
+        },
+        "backend": {
+          "name": "Backend",
+          "items": "Node.js, Golang, .NET"
+        },
+        "mobile": {
+          "name": "Mobile",
+          "items": "React Native, Expo"
+        },
+        "database": {
+          "name": "Database",
+          "items": "PostgreSQL, Prisma, MongoDB"
+        }
+      }
+    },
+    "github": {
+      "title": "Atividade no GitHub",
+      "subtitle": "Contribuições e commits durante o ano",
+      "stats": {
+        "contributions": "Contribuições",
+        "repositories": "Repositórios",
+        "followers": "Seguidores",
+        "commits": "Commits"
+      },
+      "months": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+      "legend": {
+        "less": "Menos",
+        "more": "Mais"
+      },
+      "contributionsIn": "contribuições em {year}",
+      "until": "(até {date})",
+      "tooltip": "{date}: {count} contribuições"
+    },
+    "experience": {
+      "title": "Experiência",
+      "subtitle": "Empresas e posições ocupadas",
+      "roles": {
+        "mobinads": {
+          "company": "Mobinads Cloud",
+          "role": "Chief Technology Officer",
+          "badge": "Tech Lead"
+        },
+        "kiala": {
+          "company": "Kiala Jobs",
+          "role": "Senior Software Engineer",
+          "badge": "Tech Lead"
+        },
+        "digitalsindico": {
+          "company": "Digital Síndico",
+          "role": "Chief Technology Officer",
+          "badge": "Tech Lead"
+        },
+        "fortytwo": {
+          "company": "42 Luanda",
+          "role": "Cadete",
+          "badge": "Aluno"
+        }
+      }
+    },
+    "achievements": {
+      "title": "Destaques",
+      "subtitle": "Áreas de atuação e evolução",
+      "items": [
+        "Desenvolvimento de plataformas escaláveis",
+        "Arquitetura backend moderna",
+        "Open Source & contribuição técnica",
+        "UI/UX Design avançado"
+      ]
+    },
+    "contact": {
+      "email": "Email",
+      "phone": "Telefone"
+    }
+  },
+  "about": {
+    "title": "Sobre",
+    "titleHighlight": "Mim",
+    "subtitle": "Conheça mais sobre minha trajetória, habilidades e o que me motiva",
+    "achievements": [
+      { "title": "5+ Anos", "description": "de experiência" },
+      { "title": "15+ Projetos", "description": "entregues com sucesso" },
+      { "title": "3 Países", "description": "clientes atendidos" },
+      { "title": "50+ Features", "description": "implementadas" }
+    ],
+    "sections": {
+      "who": {
+        "title": "Quem sou eu?",
+        "text": "Desenvolvedor com mais de 5 anos de experiência no mercado de tecnologia, focado no desenvolvimento de soluções de aplicações web e mobile eficientes e escaláveis para usuários finais."
+      },
+      "specialties": {
+        "title": "Especializações",
+        "text": "Especializado no ecossistema JavaScript, com expertise em React, Next.js, Node.js e TypeScript. Apaixonado por fornecer código limpo e de alto desempenho com uma excelente experiência do usuário."
+      },
+      "evolving": {
+        "title": "Em Evolução",
+        "text": "Atualmente em evolução na stack C#/.NET, desenvolvendo APIs REST e aprofundando conhecimentos em EF Core, ASP.NET e SQL Server."
+      },
+      "personalInfo": {
+        "title": "Informações Pessoais",
+        "location": "Localização",
+        "locationValue": "Benfica, Luanda - Angola",
+        "email": "Email",
+        "emailValue": "felixsdomingos93@gmail.com",
+        "phone": "Telefone",
+        "phoneValue": "+244 926 195 572",
+        "languages": "Idiomas",
+        "languagesValue": "Português (Nativo), Inglês (Fluente)"
+      }
+    },
+    "skills": {
+      "title": "Stack & Habilidades",
+      "level": "Nível {level}",
+      "levels": {
+        "expert": "Especialista",
+        "advanced": "Avançado",
+        "intermediate": "Intermediário"
+      },
+      "projects": "{count} projetos"
+    },
+    "differentials": {
+      "title": "Diferenciais",
+      "items": [
+        "Clean Code & SOLID",
+        "APIs RESTful & GraphQL",
+        "Metodologias Ágeis",
+        "Liderança Técnica"
+      ]
+    }
+  },
+  "experience": {
+    "badge": "Trajetória Profissional",
+    "title": "Experiência",
+    "titleHighlight": "Profissional",
+    "subtitle": "Mais de 5 anos desenvolvendo soluções modernas, escaláveis e focadas em performance.",
+    "stats": {
+      "experience": "Experiência",
+      "experienceSuffix": "anos",
+      "companies": "Empresas",
+      "projects": "Projetos",
+      "projectsSuffix": "ativos",
+      "technologies": "Tecnologias",
+      "technologiesSuffix": "+"
+    },
+    "current": "Atual",
+    "keyResults": "Principais Resultados",
+    "cta": "Disponível para novos desafios e oportunidades",
+    "items": [
+      {
+        "id": 1,
+        "title": "CTO (Chief Technology Officer)",
+        "company": "Mobinads Cloud",
+        "location": "Remoto",
+        "period": "2024 - Presente",
+        "achievements": [
+          "Arquitetura escalável com 1M+ requests/dia",
+          "Redução de 40% em infraestrutura",
+          "Liderança de equipe técnica"
+        ],
+        "description": [
+          "Liderança técnica e arquitetura cloud",
+          "Desenvolvimento de plataforma de advertising",
+          "Gestão de equipe de desenvolvimento",
+          "Implementação de CI/CD e boas práticas"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Software Engineer Sênior",
+        "company": "Kiala Jobs",
+        "location": "Remoto",
+        "period": "2024 - Presente",
+        "achievements": [
+          "ElasticSearch com 200ms response",
+          "Integração com APIs externas",
+          "Cobertura de testes >85%"
+        ],
+        "description": [
+          "Plataforma de recrutamento e empregos",
+          "Microsserviços com Node.js e Golang",
+          "Integração com APIs de terceiros",
+          "Escalabilidade e performance"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "CTO (Chief Technology Officer)",
+        "company": "Digital Síndico",
+        "location": "Remoto",
+        "period": "2024 - Presente",
+        "achievements": [
+          "Gateway de pagamentos",
+          "Arquitetura serverless",
+          "Retenção de usuários +60%"
+        ],
+        "description": [
+          "Liderança técnica da plataforma",
+          "Arquitetura fullstack moderna",
+          "Sistema de pagamentos",
+          "Segurança e conformidade"
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Frontend Developer",
+        "company": "NeatXpress",
+        "location": "Remoto",
+        "period": "2024 - Presente",
+        "achievements": [
+          "LCP reduzido em 50%",
+          "PWA com 95+ Lighthouse",
+          "Design system reutilizável"
+        ],
+        "description": [
+          "Interfaces com React e Next.js",
+          "Integração com APIs REST",
+          "Performance e SEO",
+          "Componentização moderna"
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Fullstack & UI/UX Developer",
+        "company": "BitKabir - Angola",
+        "location": "Luanda, Angola",
+        "period": "2024 - 2025",
+        "achievements": [
+          "3 aplicações em produção",
+          "Design system implementado",
+          "Entrega mais rápida"
+        ],
+        "description": [
+          "Soluções para logística e mobilidade",
+          "UI/UX Design moderno",
+          "Aplicações web e mobile"
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Fullstack Developer",
+        "company": "LexifyTech - Brazil",
+        "location": "Remoto",
+        "period": "2024",
+        "achievements": [
+          "Entrega antecipada do MVP",
+          "Integração com APIs externas",
+          "Documentação da API"
+        ],
+        "description": [
+          "Projeto Listagreen",
+          "Backend com Express",
+          "Integrações fullstack"
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Fullstack Web Developer",
+        "company": "Dline-Code",
+        "location": "Luanda, Angola",
+        "period": "2022 - 2023",
+        "achievements": [
+          "SEO +40%",
+          "CI/CD com GitHub Actions",
+          "Migração de projetos"
+        ],
+        "description": [
+          "Soluções React.js e Next.js",
+          "Integração de APIs",
+          "SEO e otimização"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Meus",
+    "titleHighlight": "Projetos",
+    "filters": {
+      "all": "Todos",
+      "dev": "Desenvolvimento",
+      "challenge": "Desafios",
+      "design": "Design",
+      "mentorship": "Mentoria",
+      "legacy": "Legado"
+    },
+    "viewProject": "Ver projeto",
+    "noPreview": "Sem preview disponível",
+    "items": [
+      {
+        "id": 1,
+        "title": "Mobinads Cloud",
+        "description": "Plataforma de advertising digital e monetização de tráfego mobile"
+      },
+      {
+        "id": 2,
+        "title": "Kiala Jobs",
+        "description": "Plataforma de recrutamento e empregos para Angola e África"
+      },
+      {
+        "id": 3,
+        "title": "Digital Síndico",
+        "description": "Gestão completa para condomínios com app mobile"
+      },
+      {
+        "id": 4,
+        "title": "Skylla",
+        "description": "Plataforma de colaboração e gestão de projetos"
+      },
+      {
+        "id": 5,
+        "title": "FlixHome",
+        "description": "Streaming de conteúdo audiovisual para o mercado africano"
+      },
+      {
+        "id": 6,
+        "title": "NeatXpress",
+        "description": "Soluções de logística e entregas expressas"
+      },
+      {
+        "id": 7,
+        "title": "FinderMovie",
+        "description": "App para descoberta de filmes"
+      },
+      {
+        "id": 8,
+        "title": "Go Burguer",
+        "description": "Sistema de pedidos online de fast-food"
+      },
+      {
+        "id": 9,
+        "title": "IASD KM12B Platform",
+        "description": "Sistema institucional e eventos da igreja"
+      },
+      {
+        "id": 10,
+        "title": "App Financeiro (Mentoria)",
+        "description": "Projeto UI/UX para app financeiro (Gelson Pedro)"
+      },
+      {
+        "id": 11,
+        "title": "Arena Game Angola",
+        "description": "Plataforma de jogos online em Angola"
+      },
+      {
+        "id": 12,
+        "title": "Kitoko App",
+        "description": "Marketplace de salões e produtos capilares"
+      },
+      {
+        "id": 13,
+        "title": "Mentoria Rocketseat",
+        "description": "Evolução frontend e comunidade"
+      },
+      {
+        "id": 14,
+        "title": "Portfolio Antigo",
+        "description": "Versão anterior do meu portfólio"
+      },
+      {
+        "id": 18,
+        "title": "Delégua - Linguagem de Programação",
+        "description": "Linguagem de programação em português com múltiplos dialetos e interpretador próprio (open-source)"
+      },
+      {
+        "id": 19,
+        "title": "API Federação",
+        "description": "Arquitetura backend em .NET com separação em camadas (Core, Infra, Application, API)"
+      },
+      {
+        "id": 20,
+        "title": "Backend Base System",
+        "description": "Estrutura backend escalável com Node.js, Prisma e arquitetura modular pronta para produção"
+      },
+      {
+        "id": 21,
+        "title": "Chat Comunitário",
+        "description": "Plataforma de chat para comunidades com Next.js, Prisma e arquitetura moderna fullstack"
+      }
+    ]
+  },
+  "companies": {
+    "title": "Empresas que",
+    "titleHighlight": "Atuo/Atuei",
+    "subtitle": "Conheça as empresas onde aplico minha expertise como CTO e Engenheiro de Software Sênior",
+    "items": [
+      {
+        "id": 1,
+        "name": "Mobinads Cloud",
+        "role": "Chief Technology Officer (CTO)",
+        "description": "Plataforma inovadora de advertising digital e monetização de tráfego mobile. Solução completa para publishers e anunciantes.",
+        "highlights": [
+          "Arquitetura de sistema em microserviços",
+          "Processamento de milhões de requests por dia",
+          "Sistema de bidding em tempo real",
+          "Dashboard analytics com dados em tempo real"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Kiala Jobs",
+        "role": "Software Engineer Sênior",
+        "description": "Plataforma de recrutamento e empregos que conecta talentos às melhores oportunidades em Angola e África.",
+        "highlights": [
+          "Sistema de matching de candidaturas com IA",
+          "Integração com APIs de empresas parceiras",
+          "Dashboard administrativo completo",
+          "Notificações em tempo real"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Digital Síndico",
+        "role": "Chief Technology Officer (CTO)",
+        "description": "Plataforma completa para gestão de condomínios, oferecendo soluções de comunicação, financeiro e reservas.",
+        "highlights": [
+          "Sistema de pagamentos integrado",
+          "App mobile para moradores e síndicos",
+          "Gestão de reservas de áreas comuns",
+          "Relatórios financeiros automatizados"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Skylla",
+        "role": "Frontend Developer",
+        "description": "Plataforma inovadora da Planfity para gestão de projetos e colaboração em equipe.",
+        "highlights": [
+          "Interface moderna e responsiva",
+          "Consumo de APIs em tempo real",
+          "Componentes reutilizáveis",
+          "Performance otimizada"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "FlixHome",
+        "role": "Contribuidor",
+        "description": "Plataforma de streaming de conteúdo audiovisual com foco no mercado africano.",
+        "highlights": [
+          "Player de vídeo customizado",
+          "Sistema de recomendações",
+          "Catálogo de conteúdo organizado",
+          "Experiência mobile-first"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "NeatXpress",
+        "role": "Frontend Developer",
+        "description": "Soluções de logística e entregas expressas com tecnologia de ponta.",
+        "highlights": [
+          "Rastreamento de entregas em tempo real",
+          "Dashboard de gestão de rotas",
+          "Interface intuitiva para entregadores",
+          "Integração com maps"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Entre em",
+    "titleHighlight": "Contato",
+    "subtitle": "Vamos conversar sobre oportunidades, projetos e parcerias",
+    "info": {
+      "title": "Informações de Contato",
+      "email": "Email",
+      "phone": "Telefone",
+      "location": "Localização",
+      "locationValue": "Benfica, Luanda - Angola",
+      "availability": "Disponibilidade",
+      "availabilityValue": "Dom-Sex: 00h - 18h (WAT)"
+    },
+    "social": {
+      "title": "Redes Sociais"
+    },
+    "responseTime": {
+      "label": "Tempo médio de resposta",
+      "value": "~ 24 horas",
+      "note": "Responderei o mais breve possível!"
+    },
+    "form": {
+      "title": "Envie uma Mensagem",
+      "nameLabel": "Nome Completo *",
+      "namePlaceholder": "Seu nome",
+      "emailLabel": "Email *",
+      "emailPlaceholder": "seu@email.com",
+      "subjectLabel": "Assunto",
+      "subjectPlaceholder": "Assunto da mensagem",
+      "messageLabel": "Mensagem *",
+      "messagePlaceholder": "Sua mensagem...",
+      "sending": "Enviando...",
+      "sent": "Mensagem Enviada!",
+      "send": "Enviar Mensagem",
+      "error": "Erro ao enviar. Tente novamente."
+    }
+  },
+  "pageTransition": {
+    "status": "Status: System Online",
+    "name": "FÉLIX DOMINGOS",
+    "role": "Creative Developer / Fullstack",
+    "messages": [
+      "> Initializing core modules...",
+      "> Compiling visual shaders...",
+      "> Establishing neural connection...",
+      "> Ready for interaction."
+    ]
+  },
+  "notFound": {
+    "title": "Página Não Encontrada",
+    "text": "Ops! A página que você está procurando parece ter se perdido no espaço digital.",
+    "backHome": "Voltar para Home",
+    "back": "Voltar"
+  },
+  "footer": {
+    "copyright": "© {year} Félix Domingos"
+  },
+  "api": {
+    "missingFields": "Campos obrigatórios em falta.",
+    "emailSubject": "Nova mensagem do portfólio",
+    "emailTitle": "Nova mensagem do portfólio",
+    "emailSubtitle": "Recebido via formulário de contacto",
+    "labelName": "Nome",
+    "labelEmail": "Email",
+    "labelSubject": "Assunto",
+    "labelMessage": "Mensagem",
+    "noSubject": "Sem assunto",
+    "replyNow": "Responder agora",
+    "footer": "Portfolio Contact System",
+    "success": "Mensagem enviada com sucesso!",
+    "error": "Erro interno do servidor."
+  }
+}

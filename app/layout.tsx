@@ -1,25 +1,5 @@
-import type { Metadata } from "next";
-import { Inter, Roboto_Mono } from "next/font/google";
-import "./globals.css";
+import { ReactNode } from 'react';
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const robotoMono = Roboto_Mono({ subsets: ["latin"], variable: "--font-roboto-mono" });
-
-export const metadata: Metadata = {
-  title: "Felix Domingos | Software Developer",
-  description: "Portfolio de Felix Domingos. Transformando conceitos em experiências digitais 3D interativas.",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="pt-BR">
-      <body className={`${inter.variable} ${robotoMono.variable} font-sans antialiased`}>
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return children;
 }

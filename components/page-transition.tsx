@@ -1,10 +1,13 @@
 'use client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export function PageTransition() {
   const [progress, setProgress] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
+  const t = useTranslations('pageTransition');
+  const messages = t.raw('messages') as string[];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -38,7 +41,7 @@ export function PageTransition() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                Status: System Online
+                {t('status')}
               </motion.span>
               <motion.span className="text-primary-neon">
                 {Math.floor(progress)}%
@@ -64,7 +67,7 @@ export function PageTransition() {
                 animate={{ y: 0 }}
                 className="text-xl font-medium tracking-tighter"
               >
-                FÉLIX DOMINGOS
+                {t('name')}
               </motion.h2>
               <motion.p
                 initial={{ y: 20, opacity: 0 }}
@@ -72,7 +75,7 @@ export function PageTransition() {
                 transition={{ delay: 0.1 }}
                 className="text-[10px] font-mono text-zinc-500 mt-1 tracking-widest uppercase"
               >
-                Creative Developer / Fullstack
+                {t('role')}
               </motion.p>
             </div>
 
@@ -84,10 +87,10 @@ export function PageTransition() {
                 exit={{ y: -20, opacity: 0 }}
                 className="text-[9px] font-mono text-primary-neon/60 uppercase"
               >
-                {progress < 30 && "> Initializing core modules..."}
-                {progress >= 30 && progress < 60 && "> Compiling visual shaders..."}
-                {progress >= 60 && progress < 90 && "> Establishing neural connection..."}
-                {progress >= 90 && "> Ready for interaction."}
+                {progress < 30 && messages[0]}
+                {progress >= 30 && progress < 60 && messages[1]}
+                {progress >= 60 && progress < 90 && messages[2]}
+                {progress >= 90 && messages[3]}
               </motion.p>
             </div>
           </div>

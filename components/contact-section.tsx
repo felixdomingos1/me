@@ -3,8 +3,11 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Clock, MessageCircle, CheckCircle, AlertCircle } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaWhatsapp, FaTelegram } from 'react-icons/fa';
 import { useState } from 'react';
+import { useTranslations, useLocale } from 'next-intl';
 
 export function ContactSection() {
+  const t = useTranslations('contact');
+  const locale = useLocale();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,6 +16,7 @@ export function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -23,7 +27,7 @@ export function ContactSection() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, locale }),
       });
       if (!response.ok) {
         throw new Error('Erro ao enviar');
@@ -47,15 +51,15 @@ export function ContactSection() {
   };
 
   const contactInfo = [
-    { icon: <Mail className="w-5 h-5" />, label: 'Email', value: 'felixsdomingos93@gmail.com', href: 'mailto:felixsdomingos93@gmail.com', color: 'hover:bg-red-500/20' },
-    { icon: <Phone className="w-5 h-5" />, label: 'Telefone', value: '+244 926 195 572', href: 'tel:+244926195572', color: 'hover:bg-green-500/20' },
-    { icon: <MapPin className="w-5 h-5" />, label: 'Localização', value: 'Benfica, Luanda - Angola', href: null, color: 'hover:bg-blue-500/20' },
-    { icon: <Clock className="w-5 h-5" />, label: 'Disponibilidade', value: 'Dom-Sex: 00h - 18h (WAT)', href: null, color: 'hover:bg-yellow-500/20' },
+    { icon: <Mail className="w-5 h-5" />, label: t('info.email'), value: 'felixsdomingos93@gmail.com', href: 'mailto:felixsdomingos93@gmail.com', color: 'hover:bg-red-500/20' },
+    { icon: <Phone className="w-5 h-5" />, label: t('info.phone'), value: '+244 926 195 572', href: 'tel:+244926195572', color: 'hover:bg-green-500/20' },
+    { icon: <MapPin className="w-5 h-5" />, label: t('info.location'), value: t('info.locationValue'), href: null, color: 'hover:bg-blue-500/20' },
+    { icon: <Clock className="w-5 h-5" />, label: t('info.availability'), value: t('info.availabilityValue'), href: null, color: 'hover:bg-yellow-500/20' },
   ];
 
   const socialLinks = [
     { icon: <FaGithub className="w-5 h-5" />, name: 'GitHub', url: 'https://github.com/felixdomingos1', color: '#333' },
-    { icon: <FaLinkedin className="w-5 h-5" />, name: 'LinkedIn', url: 'https://www.linkedin.com/in/felixdomingos', color: '#0077B5' },
+    { icon: <FaLinkedin className="w-5 h-5" />, name: 'LinkedIn', url: 'https://linkedin.com/in/felixdomingos', color: '#0077B5' },
     { icon: <FaWhatsapp className="w-5 h-5" />, name: 'WhatsApp', url: 'https://wa.me/244926195572', color: '#25D366' },
     { icon: <FaTelegram className="w-5 h-5" />, name: 'Telegram', url: 'https://t.me/felixdomingos', color: '#0088cc' },
   ];
@@ -70,10 +74,10 @@ export function ContactSection() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Entre em <span className="text-primary-neon">Contato</span>
+            {t('title')} <span className="text-primary-neon">{t('titleHighlight')}</span>
           </h2>
           <div className="w-20 h-1 bg-linear-to-r from-primary-neon to-accent-purple mx-auto rounded-full" />
-          <p className="text-text-gray mt-4">Vamos conversar sobre oportunidades, projetos e parcerias</p>
+          <p className="text-text-gray mt-4">{t('subtitle')}</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8">
@@ -87,7 +91,7 @@ export function ContactSection() {
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
               <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
                 <MessageCircle className="text-primary-neon w-5 h-5" />
-                Informações de Contato
+                {t('info.title')}
               </h3>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
@@ -118,7 +122,7 @@ export function ContactSection() {
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-              <h3 className="text-xl font-semibold text-white mb-6">Redes Sociais</h3>
+              <h3 className="text-xl font-semibold text-white mb-6">{t('social.title')}</h3>
               <div className="grid grid-cols-2 gap-3">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -149,10 +153,10 @@ export function ContactSection() {
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center">
               <div className="flex items-center justify-center gap-2 text-primary-neon mb-2">
                 <Clock className="w-4 h-4" />
-                <span className="text-sm">Tempo médio de resposta</span>
+                <span className="text-sm">{t('responseTime.label')}</span>
               </div>
-              <p className="text-white text-lg font-bold">~ 24 horas</p>
-              <p className="text-text-gray text-xs mt-1">Responderei o mais breve possível!</p>
+              <p className="text-white text-lg font-bold">{t('responseTime.value')}</p>
+              <p className="text-text-gray text-xs mt-1">{t('responseTime.note')}</p>
             </div>
           </motion.div>
 
@@ -165,14 +169,14 @@ export function ContactSection() {
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
               <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
                 <Send className="text-primary-neon w-5 h-5" />
-                Envie uma Mensagem
+                {t('form.title')}
               </h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="text-text-gray text-sm mb-1 block">Nome Completo *</label>
+                  <label className="text-text-gray text-sm mb-1 block">{t('form.nameLabel')}</label>
                   <input
                     type="text"
-                    placeholder="Seu nome"
+                    placeholder={t('form.namePlaceholder')}
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
@@ -180,10 +184,10 @@ export function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="text-text-gray text-sm mb-1 block">Email *</label>
+                  <label className="text-text-gray text-sm mb-1 block">{t('form.emailLabel')}</label>
                   <input
                     type="email"
-                    placeholder="seu@email.com"
+                    placeholder={t('form.emailPlaceholder')}
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
@@ -191,19 +195,19 @@ export function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="text-text-gray text-sm mb-1 block">Assunto</label>
+                  <label className="text-text-gray text-sm mb-1 block">{t('form.subjectLabel')}</label>
                   <input
                     type="text"
-                    placeholder="Assunto da mensagem"
+                    placeholder={t('form.subjectPlaceholder')}
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:border-primary-neon transition-all focus:ring-1 focus:ring-primary-neon"
                   />
                 </div>
                 <div>
-                  <label className="text-text-gray text-sm mb-1 block">Mensagem *</label>
+                  <label className="text-text-gray text-sm mb-1 block">{t('form.messageLabel')}</label>
                   <textarea
-                    placeholder="Sua mensagem..."
+                    placeholder={t('form.messagePlaceholder')}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required
@@ -219,16 +223,16 @@ export function ContactSection() {
                   {isSubmitting ? (
                     <>
                       <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      Enviando...
+                      {t('form.sending')}
                     </>
                   ) : submitStatus === 'success' ? (
                     <>
                       <CheckCircle className="w-4 h-4" />
-                      Mensagem Enviada!
+                      {t('form.sent')}
                     </>
                   ) : (
                     <>
-                      Enviar Mensagem
+                      {t('form.send')}
                       <Send className="w-4 h-4" />
                     </>
                   )}
@@ -236,7 +240,7 @@ export function ContactSection() {
                 {submitStatus === 'error' && (
                   <div className="flex items-center justify-center gap-2 text-red-400 text-sm">
                     <AlertCircle className="w-4 h-4" />
-                    Erro ao enviar. Tente novamente.
+                    {t('form.error')}
                   </div>
                 )}
               </form>

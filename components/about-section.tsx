@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { Award, Code, Database, Globe, Layout, Smartphone, Server, Shield, Zap, Clock, Users, TrendingUp } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const skills = [
   { name: 'React/Next.js', icon: <Layout className="w-5 h-5" />, level: 92, years: "4+ anos", projects: 12 },
@@ -13,14 +14,18 @@ const skills = [
   { name: 'UI/UX Design', icon: <Layout className="w-5 h-5" />, level: 82, years: "3+ anos", projects: 8 },
 ];
 
-const achievements = [
-  { icon: <Award className="w-5 h-5" />, title: "5+ Anos", description: "de experiência" },
-  { icon: <Users className="w-5 h-5" />, title: "15+ Projetos", description: "entregues com sucesso" },
-  { icon: <Globe className="w-5 h-5" />, title: "3 Países", description: "clientes atendidos" },
-  { icon: <TrendingUp className="w-5 h-5" />, title: "50+ Features", description: "implementadas" },
-];
-
 export function AboutSection() {
+  const t = useTranslations('about');
+  const achievements = t.raw('achievements') as { title: string; description: string }[];
+  const differentials = t.raw('differentials.items') as string[];
+
+  const getLevelLabel = (level: number) => {
+    const levels = t.raw('skills.levels') as Record<string, string>;
+    if (level >= 90) return levels.expert;
+    if (level >= 80) return levels.advanced;
+    return levels.intermediate;
+  };
+
   return (
     <section id="about-section" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
@@ -32,11 +37,11 @@ export function AboutSection() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Sobre <span className="text-primary-neon">Mim</span>
+            {t('title')} <span className="text-primary-neon">{t('titleHighlight')}</span>
           </h2>
           <div className="w-20 h-1 bg-linear-to-r from-primary-neon to-accent-purple mx-auto rounded-full" />
           <p className="text-text-gray mt-4 max-w-2xl mx-auto">
-            Conheça mais sobre minha trajetória, habilidades e o que me motiva
+            {t('subtitle')}
           </p>
         </motion.div>
 
@@ -51,7 +56,7 @@ export function AboutSection() {
               transition={{ delay: index * 0.1 }}
               className="bg-white/5 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10 hover:border-primary-neon/30 transition-all"
             >
-              <div className="text-primary-neon flex justify-center mb-2">{item.icon}</div>
+              <div className="text-primary-neon flex justify-center mb-2">{index === 0 ? <Award className="w-5 h-5" /> : index === 1 ? <Users className="w-5 h-5" /> : index === 2 ? <Globe className="w-5 h-5" /> : <TrendingUp className="w-5 h-5" />}</div>
               <h3 className="text-white font-bold text-lg">{item.title}</h3>
               <p className="text-text-gray text-xs">{item.description}</p>
             </motion.div>
@@ -69,55 +74,50 @@ export function AboutSection() {
           >
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
               <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-                <Zap className="text-primary-neon w-5 h-5" /> Quem sou eu?
+                <Zap className="text-primary-neon w-5 h-5" /> {t('sections.who.title')}
               </h3>
               <p className="text-text-gray leading-relaxed">
-                Desenvolvedor com mais de 5 anos de experiência no mercado de tecnologia,
-                focado no desenvolvimento de soluções de aplicações web e mobile eficientes
-                e escaláveis para usuários finais.
+                {t('sections.who.text')}
               </p>
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
               <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-                <Code className="text-primary-neon w-5 h-5" /> Especializações
+                <Code className="text-primary-neon w-5 h-5" /> {t('sections.specialties.title')}
               </h3>
               <p className="text-text-gray leading-relaxed">
-                Especializado no ecossistema JavaScript, com expertise em React, Next.js,
-                Node.js e TypeScript. Apaixonado por fornecer código limpo e de alto
-                desempenho com uma excelente experiência do usuário.
+                {t('sections.specialties.text')}
               </p>
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
               <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-                <Shield className="text-primary-neon w-5 h-5" /> Em Evolução
+                <Shield className="text-primary-neon w-5 h-5" /> {t('sections.evolving.title')}
               </h3>
               <p className="text-text-gray leading-relaxed">
-                Atualmente em evolução na stack C#/.NET, desenvolvendo APIs REST e
-                aprofundando conhecimentos em EF Core, ASP.NET e SQL Server.
+                {t('sections.evolving.text')}
               </p>
             </div>
 
             {/* Info Pessoal */}
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-              <h3 className="text-lg font-semibold text-white mb-4">Informações Pessoais</h3>
+              <h3 className="text-lg font-semibold text-white mb-4">{t('sections.personalInfo.title')}</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <p className="text-white/40 text-xs flex items-center gap-1">📍 Localização</p>
-                  <p className="text-white text-sm">Benfica, Luanda - Angola</p>
+                  <p className="text-white/40 text-xs flex items-center gap-1">📍 {t('sections.personalInfo.location')}</p>
+                  <p className="text-white text-sm">{t('sections.personalInfo.locationValue')}</p>
                 </div>
                 <div>
-                  <p className="text-white/40 text-xs flex items-center gap-1">📧 Email</p>
-                  <p className="text-white text-sm break-all">felixsdomingos93@gmail.com</p>
+                  <p className="text-white/40 text-xs flex items-center gap-1">📧 {t('sections.personalInfo.email')}</p>
+                  <p className="text-white text-sm break-all">{t('sections.personalInfo.emailValue')}</p>
                 </div>
                 <div>
-                  <p className="text-white/40 text-xs flex items-center gap-1">📱 Telefone</p>
-                  <p className="text-white text-sm">+244 926 195 572</p>
+                  <p className="text-white/40 text-xs flex items-center gap-1">📱 {t('sections.personalInfo.phone')}</p>
+                  <p className="text-white text-sm">{t('sections.personalInfo.phoneValue')}</p>
                 </div>
                 <div>
-                  <p className="text-white/40 text-xs flex items-center gap-1">🌐 Idiomas</p>
-                  <p className="text-white text-sm">Português (Nativo), Inglês (Fluente)</p>
+                  <p className="text-white/40 text-xs flex items-center gap-1">🌐 {t('sections.personalInfo.languages')}</p>
+                  <p className="text-white text-sm">{t('sections.personalInfo.languagesValue')}</p>
                 </div>
               </div>
             </div>
@@ -133,7 +133,7 @@ export function AboutSection() {
           >
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
               <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-                <TrendingUp className="text-primary-neon w-5 h-5" /> Stack & Habilidades
+                <TrendingUp className="text-primary-neon w-5 h-5" /> {t('skills.title')}
               </h3>
               {skills.map((skill, index) => (
                 <motion.div
@@ -171,8 +171,8 @@ export function AboutSection() {
                     </motion.div>
                   </div>
                   <div className="flex justify-between mt-1">
-                    <span className="text-white/30 text-[10px]">{skill.projects} projetos</span>
-                    <span className="text-white/30 text-[10px]">Nível {skill.level >= 90 ? 'Especialista' : skill.level >= 80 ? 'Avançado' : 'Intermediário'}</span>
+                    <span className="text-white/30 text-[10px]">{t('skills.projects', { count: skill.projects })}</span>
+                    <span className="text-white/30 text-[10px]">{t('skills.level', { level: getLevelLabel(skill.level) })}</span>
                   </div>
                 </motion.div>
               ))}
@@ -180,24 +180,17 @@ export function AboutSection() {
 
             {/* Diferenciais */}
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-              <h3 className="text-lg font-semibold text-white mb-4">Diferenciais</h3>
+              <h3 className="text-lg font-semibold text-white mb-4">{t('differentials.title')}</h3>
               <div className="grid grid-cols-2 gap-4">
-                <div className="flex items-center gap-2 text-text-gray p-3 bg-white/5 rounded-lg">
-                  <Award className="w-4 h-4 text-primary-neon" />
-                  <span className="text-sm">Clean Code & SOLID</span>
-                </div>
-                <div className="flex items-center gap-2 text-text-gray p-3 bg-white/5 rounded-lg">
-                  <Globe className="w-4 h-4 text-primary-neon" />
-                  <span className="text-sm">APIs RESTful & GraphQL</span>
-                </div>
-                <div className="flex items-center gap-2 text-text-gray p-3 bg-white/5 rounded-lg">
-                  <Clock className="w-4 h-4 text-primary-neon" />
-                  <span className="text-sm">Metodologias Ágeis</span>
-                </div>
-                <div className="flex items-center gap-2 text-text-gray p-3 bg-white/5 rounded-lg">
-                  <Users className="w-4 h-4 text-primary-neon" />
-                  <span className="text-sm">Liderança Técnica</span>
-                </div>
+                {differentials.map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 text-text-gray p-3 bg-white/5 rounded-lg">
+                    {i === 0 ? <Award className="w-4 h-4 text-primary-neon" /> :
+                     i === 1 ? <Globe className="w-4 h-4 text-primary-neon" /> :
+                     i === 2 ? <Clock className="w-4 h-4 text-primary-neon" /> :
+                     <Users className="w-4 h-4 text-primary-neon" />}
+                    <span className="text-sm">{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </motion.div>

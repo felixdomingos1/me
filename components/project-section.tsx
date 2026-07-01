@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 type Project = {
   id: number;
@@ -21,7 +22,7 @@ const projects: Project[] = [
   {
     id: 1,
     title: 'Mobinads Cloud',
-    description: 'Plataforma de advertising digital e monetização de tráfego mobile',
+    description: 'projects.items.0.description',
     tech: ['React', 'Node.js', 'Golang', 'PostgreSQL', 'Redis'],
     image: '/projects/mobinads.png',
     liveUrl: 'https://mobinads.cloud',
@@ -32,7 +33,7 @@ const projects: Project[] = [
   {
     id: 2,
     title: 'Kiala Jobs',
-    description: 'Plataforma de recrutamento e empregos para Angola e África',
+    description: 'projects.items.1.description',
     tech: ['Next.js', 'Node.js', 'Golang', 'MongoDB', 'ElasticSearch'],
     hasImage: true,
     image: '/projects/kialajobs.png',
@@ -43,7 +44,7 @@ const projects: Project[] = [
   {
     id: 3,
     title: 'Digital Síndico',
-    description: 'Gestão completa para condomínios com app mobile',
+    description: 'projects.items.2.description',
     tech: ['Next.js', 'React Native', 'Node.js', 'PostgreSQL', 'Stripe'],
     image: '/projects/digitalsindico.png',
     liveUrl: 'https://digitalsindico.com',
@@ -54,7 +55,7 @@ const projects: Project[] = [
   {
     id: 4,
     title: 'Skylla',
-    description: 'Plataforma de colaboração e gestão de projetos',
+    description: 'projects.items.3.description',
     tech: ['React', 'TypeScript', 'Go', 'Tailwind CSS'],
     image: '/projects/skylla.png',
     liveUrl: 'https://skylla.app',
@@ -65,7 +66,7 @@ const projects: Project[] = [
   {
     id: 5,
     title: 'FlixHome',
-    description: 'Streaming de conteúdo audiovisual para o mercado africano',
+    description: 'projects.items.4.description',
     tech: ['Next.js', 'Node.js', 'MongoDB', 'FFmpeg'],
     image: '/projects/flixhome.png',
     liveUrl: 'https://flixhome.app',
@@ -76,7 +77,7 @@ const projects: Project[] = [
   {
     id: 6,
     title: 'NeatXpress',
-    description: 'Soluções de logística e entregas expressas',
+    description: 'projects.items.5.description',
     tech: ['React', 'Next.js', 'Mapbox', 'Tailwind CSS'],
     image: '/projects/neatxpress.png',
     liveUrl: 'https://neatxpress.org',
@@ -84,11 +85,10 @@ const projects: Project[] = [
     featured: true,
     category: 'dev'
   },
-
   {
     id: 7,
     title: 'FinderMovie',
-    description: 'App para descoberta de filmes',
+    description: 'projects.items.6.description',
     tech: ['Next.js', 'API', 'Tailwind'],
     image: '/projects/findermovie.png',
     liveUrl: 'https://findermovie.vercel.app',
@@ -98,28 +98,27 @@ const projects: Project[] = [
   {
     id: 8,
     title: 'Go Burguer',
-    description: 'Sistema de pedidos online de fast-food',
+    description: 'projects.items.7.description',
     tech: ['React', 'Node.js'],
     image: '/projects/go-burguer.png',
-    liveUrl: 'https://goo-burguer.vercel.app/',
+    liveUrl: 'https://go-burguer.vercel.app/',
     hasImage: true,
     category: 'challenge'
   },
   {
     id: 9,
     title: 'IASD KM12B Platform',
-    description: 'Sistema institucional e eventos da igreja',
+    description: 'projects.items.8.description',
     tech: ['Next.js', 'TypeScript'],
     image: '/projects/iasd.png',
     liveUrl: 'https://iasdkm12.vercel.app/',
     hasImage: true,
     category: 'challenge'
   },
-
   {
     id: 10,
-    title: 'App Financeiro (Mentoria)',
-    description: 'Projeto UI/UX para app financeiro (Gelson Pedro)',
+    title: 'projects.items.9.title',
+    description: 'projects.items.9.description',
     tech: ['Figma', 'UI/UX'],
     image: '/projects/figma-finance.png',
     liveUrl: 'https://www.figma.com/design/EVKUv6UKSXbDAGrkdZKvRb/App-de-finan%C3%A7as',
@@ -128,8 +127,8 @@ const projects: Project[] = [
   },
   {
     id: 11,
-    title: 'Arena Game Angola',
-    description: 'Plataforma de jogos online em Angola',
+    title: 'projects.items.10.title',
+    description: 'projects.items.10.description',
     tech: ['Figma', 'UI Design'],
     image: '/projects/arena-game.png',
     liveUrl: 'https://www.figma.com/design/TC15OaAE65dR6Se4DINX8g/Arena-Game',
@@ -138,41 +137,38 @@ const projects: Project[] = [
   },
   {
     id: 12,
-    title: 'Kitoko App',
-    description: 'Marketplace de salões e produtos capilares',
+    title: 'projects.items.11.title',
+    description: 'projects.items.11.description',
     tech: ['Figma', 'UI/UX'],
     image: '/projects/kitoko.png',
     liveUrl: 'https://www.figma.com/design/6me7WMd05QJ2WXVsXBNs9Q/Sistema---Kitoko',
     hasImage: true,
     category: 'design'
   },
-
   {
     id: 13,
-    title: 'Mentoria Rocketseat',
-    description: 'Evolução frontend e comunidade',
+    title: 'projects.items.12.title',
+    description: 'projects.items.12.description',
     tech: ['Figma', 'Community'],
     image: '/projects/rocketseat-mentoria.png',
     liveUrl: 'https://www.figma.com/design/aLPUHMkSgLRmkDkUy3wpEv/Portfolio-Dev--Community-',
     hasImage: true,
     category: 'mentorship'
   },
-
   {
     id: 14,
-    title: 'Portfolio Antigo',
-    description: 'Versão anterior do meu portfólio',
+    title: 'projects.items.13.title',
+    description: 'projects.items.13.description',
     tech: ['React', 'CSS'],
     image: '/projects/portfolio-old.png',
-    liveUrl: 'https://felixdomingos.vercel.app/',
+    liveUrl: 'https://github.com/felixdomingos1',
     hasImage: true,
     category: 'legacy'
   },
   {
     id: 18,
-    title: 'Delégua - Linguagem de Programação',
-    description:
-      'Linguagem de programação em português com múltiplos dialetos e interpretador próprio (open-source)',
+    title: 'projects.items.14.title',
+    description: 'projects.items.14.description',
     tech: ['TypeScript', 'ANTLR', 'Node.js', 'Open Source'],
     image: '/projects/delegua.png',
     liveUrl: 'https://github.com/felixdomingos1/delegua',
@@ -182,9 +178,8 @@ const projects: Project[] = [
   },
   {
     id: 19,
-    title: 'API Federação',
-    description:
-      'Arquitetura backend em .NET com separação em camadas (Core, Infra, Application, API)',
+    title: 'projects.items.15.title',
+    description: 'projects.items.15.description',
     tech: ['C#', '.NET', 'Clean Architecture', 'Microservices'],
     image: '/projects/api-federacao.png',
     liveUrl: 'https://github.com/felixdomingos1/api-federacao',
@@ -194,9 +189,8 @@ const projects: Project[] = [
   },
   {
     id: 20,
-    title: 'Backend Base System',
-    description:
-      'Estrutura backend escalável com Node.js, Prisma e arquitetura modular pronta para produção',
+    title: 'projects.items.16.title',
+    description: 'projects.items.16.description',
     tech: ['Node.js', 'TypeScript', 'Prisma', 'MySQL'],
     image: '/projects/backend.png',
     liveUrl: 'https://github.com/felixdomingos1/Backend',
@@ -206,9 +200,8 @@ const projects: Project[] = [
   },
   {
     id: 21,
-    title: 'Chat Comunitário',
-    description:
-      'Plataforma de chat para comunidades com Next.js, Prisma e arquitetura moderna fullstack',
+    title: 'projects.items.17.title',
+    description: 'projects.items.17.description',
     tech: ['Next.js', 'Prisma', 'PostgreSQL', 'Tailwind'],
     image: '/projects/chatcomunitario.png',
     liveUrl: 'https://github.com/felixdomingos1/ChatComunitario',
@@ -218,17 +211,37 @@ const projects: Project[] = [
   },
 ];
 
-const categories = [
-  { key: 'all', label: 'Todos' },
-  { key: 'dev', label: 'Desenvolvimento' },
-  { key: 'challenge', label: 'Desafios' },
-  { key: 'design', label: 'Design' },
-  { key: 'mentorship', label: 'Mentoria' },
-  { key: 'legacy', label: 'Legado' }
-] as const;
-
 export function ProjectSection() {
   const [active, setActive] = useState<string>('all');
+  const t = useTranslations('projects');
+
+  const categories = [
+    { key: 'all', label: t('filters.all') },
+    { key: 'dev', label: t('filters.dev') },
+    { key: 'challenge', label: t('filters.challenge') },
+    { key: 'design', label: t('filters.design') },
+    { key: 'mentorship', label: t('filters.mentorship') },
+    { key: 'legacy', label: t('filters.legacy') }
+  ] as const;
+
+  type ProjectItem = { title: string; description: string };
+
+  const getProjectTitle = (p: Project) => {
+    if (p.title.startsWith('projects.items')) {
+      const index = parseInt(p.title.split('.')[2]);
+      return (t.raw('items') as ProjectItem[])[index].title;
+    }
+    return p.title;
+  };
+
+  const getProjectDescription = (p: Project) => {
+    if (p.description.startsWith('projects.items')) {
+      const parts = p.description.split('.');
+      const index = parseInt(parts[2]);
+      return (t.raw('items') as ProjectItem[])[index].description;
+    }
+    return p.description;
+  };
 
   const filtered =
     active === 'all'
@@ -246,7 +259,7 @@ export function ProjectSection() {
           className="text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold">
-            Meus <span className="text-primary-neon">Projetos</span>
+            {t('title')} <span className="text-primary-neon">{t('titleHighlight')}</span>
           </h2>
           <div className="w-20 h-1 bg-linear-to-r from-primary-neon to-accent-purple mx-auto rounded-full mt-3" />
         </motion.div>
@@ -284,27 +297,27 @@ export function ProjectSection() {
                 <div className="h-40 relative">
                   <Image
                     src={project.image!}
-                    alt={project.title}
+                    alt={getProjectTitle(project)}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover group-hover:scale-110 transition"
                   />
                 </div>
               ) : (
-                <div className="h-1 flex items-center justify-center bg-white/5 border-b border-white/10">
-                  {/* <span className="text-white/40 text-sm">
-                    Sem preview disponível
-                  </span> */}
+                <div className="h-32 flex items-center justify-center bg-white/5 border-b border-white/10">
+                  <span className="text-white/40 text-sm">
+                    {t('noPreview')}
+                  </span>
                 </div>
               )}
 
               <div className="p-5">
                 <h4 className="text-white font-semibold group-hover:text-primary-neon">
-                  {project.title}
+                  {getProjectTitle(project)}
                 </h4>
 
                 <p className="text-zinc-400 text-xs mt-1 line-clamp-2">
-                  {project.description}
+                  {getProjectDescription(project)}
                 </p>
 
                 <div className="flex flex-wrap gap-1 mt-3">
@@ -319,7 +332,7 @@ export function ProjectSection() {
                 </div>
 
                 <div className="mt-4 flex items-center gap-2 text-primary-neon text-xs">
-                  Ver projeto
+                  {t('viewProject')}
                   <ExternalLink className="w-3 h-3" />
                 </div>
               </div>

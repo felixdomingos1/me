@@ -3,26 +3,29 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
-import { Navigation } from '../components/navigation';
-import { ProjectSection } from '../components/project-section';
-import { ReadmeSection } from '../components/readme-section';
-import { PageTransition } from '../components/page-transition';
-import { Background3D } from '../components/background-3d';
-import { ContactSection } from '../components/contact-section';
-import { CompaniesSection } from '../components/companies-section';
-import { ExperienceSection } from '../components/experience-section';
-import { AboutSection } from '../components/about-section';
-import { ProfileBoard } from '../components/profile-board';
+import { Navigation } from '../../components/navigation';
+import { ProjectSection } from '../../components/project-section';
+import { ReadmeSection } from '../../components/readme-section';
+import { PageTransition } from '../../components/page-transition';
+import { Background3D } from '../../components/background-3d';
+import { ContactSection } from '../../components/contact-section';
+import { CompaniesSection } from '../../components/companies-section';
+import { ExperienceSection } from '../../components/experience-section';
+import { AboutSection } from '../../components/about-section';
+import { ProfileBoard } from '../../components/profile-board';
 
-import { HomeSkeleton } from '../components/skeletons/home-skeleton';
-import { ProjectSkeleton } from '../components/skeletons/project-skeleton';
-import { AboutSkeleton } from '../components/skeletons/about-skeleton';
-import { ExperienceSkeleton } from '../components/skeletons/experience-skeleton';
+import { HomeSkeleton } from '../../components/skeletons/home-skeleton';
+import { ProjectSkeleton } from '../../components/skeletons/project-skeleton';
+import { AboutSkeleton } from '../../components/skeletons/about-skeleton';
+import { ExperienceSkeleton } from '../../components/skeletons/experience-skeleton';
+
+import { useTranslations } from 'next-intl';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('home');
   const [isLoading, setIsLoading] = useState(true);
   const [contentLoading, setContentLoading] = useState(true);
+  const t = useTranslations('footer');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -152,7 +155,7 @@ export default function Home() {
         {/* FOOTER */}
         <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-zinc-500">
           <p>
-            © {new Date().getFullYear()} Félix Domingos
+            {t('copyright', { year: new Date().getFullYear() })}
           </p>
 
           <div className="mt-2 flex justify-center gap-4">
@@ -168,7 +171,7 @@ export default function Home() {
               href="mailto:felixsdemingos93@gmail.com"
               className="hover:text-primary-neon transition"
             >
-              Contacto
+              Contact
             </a>
 
             <a

@@ -12,8 +12,11 @@ import {
 } from 'lucide-react';
 
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { useTranslations } from 'next-intl';
 
 export function ProfileBoard() {
+  const t = useTranslations('profileBoard');
+
   const handleDownloadCV = () => {
     const cvUrl = '/cv/fullstack-felix-domingos-cv.pdf';
 
@@ -27,19 +30,12 @@ export function ProfileBoard() {
   };
 
   const stats = [
-    { icon: <Briefcase className="w-4 h-4" />, label: 'Experiência', value: '5+ anos' },
-    { icon: <Code className="w-4 h-4" />, label: 'Projetos', value: '15+' },
-    { icon: <Award className="w-4 h-4" />, label: 'Tech Stack', value: '10+' },
+    { icon: <Briefcase className="w-4 h-4" />, label: t('stats.experience'), value: t('statsValues.experience') },
+    { icon: <Code className="w-4 h-4" />, label: t('stats.projects'), value: t('statsValues.projects') },
+    { icon: <Award className="w-4 h-4" />, label: t('stats.techStack'), value: t('statsValues.techStack') },
   ];
 
-  const skills = [
-    'React/Next.js',
-    'React Native',
-    'Node.js',
-    'C#/.NET',
-    'Golang',
-    'TypeScript',
-  ];
+
 
   return (
     <motion.div
@@ -50,7 +46,7 @@ export function ProfileBoard() {
       className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#060606]/90 backdrop-blur-2xl shadow-[0_0_80px_rgba(0,242,254,0.08)]"
     >
       {/* GLOW */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-linear(circle_at_top_left,rgba(0,242,254,0.12),transparent_35%),radial-linear(circle_at_bottom_right,rgba(189,0,255,0.12),transparent_35%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,242,254,0.12),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(189,0,255,0.12),transparent_35%)]" />
 
       {/* CAPA */}
       <div className="relative h-52 sm:h-60 md:h-72 overflow-visible">
@@ -133,7 +129,7 @@ export function ProfileBoard() {
   text-white
   leading-tight
 ">
-          Félix Sanjala Domingos
+          {t('name')}
         </h1>
         <p className="
   text-primary-neon
@@ -141,11 +137,11 @@ export function ProfileBoard() {
   text-sm
   sm:text-base
 ">
-          Co-Founder, CTO, Desenvolvedor Fullstack
+          {t('title')}
         </p>
         <div className="mt-2 flex items-center justify-center gap-2 text-xs text-zinc-400">
           <MapPin className="h-3 w-3 text-primary-neon" />
-          Benfica, Luanda - Angola
+          {t('location')}
         </div>
 
         {/* STATS */}<div className="
@@ -191,7 +187,7 @@ export function ProfileBoard() {
 "
           >
             <Download className="inline w-4 h-4 mr-2" />
-            Download CV
+            {t('downloadCv')}
           </button>
 
           <a
@@ -202,7 +198,7 @@ export function ProfileBoard() {
           </a>
 
           <a
-            href="https://linkedin.com"
+            href="https://linkedin.com/in/felixdomingos"
             className="rounded-xl border border-white/10 bg-white/5 p-3 text-white"
           >
             <FaLinkedin className="w-5 h-5" />

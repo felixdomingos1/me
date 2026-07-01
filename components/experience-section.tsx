@@ -1,4 +1,3 @@
-// components/experience-section.tsx
 'use client';
 
 import { motion } from 'framer-motion';
@@ -19,158 +18,7 @@ import {
 } from 'lucide-react';
 
 import { useState } from 'react';
-
-const experiences = [
-  {
-    id: 1,
-    title: 'CTO (Chief Technology Officer)',
-    company: 'Mobinads Cloud',
-    location: 'Remoto',
-    period: '2024 - Presente',
-    type: 'current',
-    techStack: ['Golang', 'React', 'AWS', 'PostgreSQL', 'Redis'],
-    achievements: [
-      'Arquitetura escalável com 1M+ requests/dia',
-      'Redução de 40% em infraestrutura',
-      'Liderança de equipe técnica',
-    ],
-    description: [
-      'Liderança técnica e arquitetura cloud',
-      'Desenvolvimento de plataforma de advertising',
-      'Gestão de equipe de desenvolvimento',
-      'Implementação de CI/CD e boas práticas',
-    ],
-    link: 'https://mobinads.cloud',
-    icon: <Rocket className="w-4 h-4 sm:w-5 sm:h-5" />,
-  },
-  {
-    id: 2,
-    title: 'Software Engineer Sênior',
-    company: 'Kiala Jobs',
-    location: 'Remoto',
-    period: '2024 - Presente',
-    type: 'current',
-    techStack: ['Node.js', 'Golang', 'MongoDB', 'ElasticSearch', 'Docker'],
-    achievements: [
-      'ElasticSearch com 200ms response',
-      'Integração com APIs externas',
-      'Cobertura de testes >85%',
-    ],
-    description: [
-      'Plataforma de recrutamento e empregos',
-      'Microsserviços com Node.js e Golang',
-      'Integração com APIs de terceiros',
-      'Escalabilidade e performance',
-    ],
-    link: 'https://kialajobs.com',
-    icon: <Users className="w-4 h-4 sm:w-5 sm:h-5" />,
-  },
-  {
-    id: 3,
-    title: 'CTO (Chief Technology Officer)',
-    company: 'Digital Síndico',
-    location: 'Remoto',
-    period: '2024 - Presente',
-    type: 'current',
-    techStack: ['Next.js', 'Node.js', 'PostgreSQL', 'Stripe', 'Redis'],
-    achievements: [
-      'Gateway de pagamentos',
-      'Arquitetura serverless',
-      'Retenção de usuários +60%',
-    ],
-    description: [
-      'Liderança técnica da plataforma',
-      'Arquitetura fullstack moderna',
-      'Sistema de pagamentos',
-      'Segurança e conformidade',
-    ],
-    link: 'https://digitalsindico.com',
-    icon: <Shield className="w-4 h-4 sm:w-5 sm:h-5" />,
-  },
-  {
-    id: 4,
-    title: 'Frontend Developer',
-    company: 'NeatXpress',
-    location: 'Remoto',
-    period: '2024 - Presente',
-    type: 'current',
-    techStack: ['React', 'Next.js', 'Tailwind', 'Mapbox', 'TypeScript'],
-    achievements: [
-      'LCP reduzido em 50%',
-      'PWA com 95+ Lighthouse',
-      'Design system reutilizável',
-    ],
-    description: [
-      'Interfaces com React e Next.js',
-      'Integração com APIs REST',
-      'Performance e SEO',
-      'Componentização moderna',
-    ],
-    link: 'https://neatxpress.org',
-    icon: <Code className="w-4 h-4 sm:w-5 sm:h-5" />,
-  },
-  {
-    id: 5,
-    title: 'Fullstack & UI/UX Developer',
-    company: 'BitKabir - Angola',
-    location: 'Luanda, Angola',
-    period: '2024 - 2025',
-    type: 'past',
-    techStack: ['Next.js', 'React Native', 'Flutter', 'Java', 'Figma'],
-    achievements: [
-      '3 aplicações em produção',
-      'Design system implementado',
-      'Entrega mais rápida',
-    ],
-    description: [
-      'Soluções para logística e mobilidade',
-      'UI/UX Design moderno',
-      'Aplicações web e mobile',
-    ],
-    icon: <Zap className="w-4 h-4 sm:w-5 sm:h-5" />,
-  },
-  {
-    id: 6,
-    title: 'Fullstack Developer',
-    company: 'LexifyTech - Brazil',
-    location: 'Remoto',
-    period: '2024',
-    type: 'past',
-    techStack: ['Next.js', 'Express', 'MongoDB', 'TypeScript'],
-    achievements: [
-      'Entrega antecipada do MVP',
-      'Integração com APIs externas',
-      'Documentação da API',
-    ],
-    description: [
-      'Projeto Listagreen',
-      'Backend com Express',
-      'Integrações fullstack',
-    ],
-    link: 'https://lexifytech.com',
-    icon: <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5" />,
-  },
-  {
-    id: 7,
-    title: 'Fullstack Web Developer',
-    company: 'Dline-Code',
-    location: 'Luanda, Angola',
-    period: '2022 - 2023',
-    type: 'past',
-    techStack: ['React', 'Next.js', 'Node.js', 'Git', 'SEO'],
-    achievements: [
-      'SEO +40%',
-      'CI/CD com GitHub Actions',
-      'Migração de projetos',
-    ],
-    description: [
-      'Soluções React.js e Next.js',
-      'Integração de APIs',
-      'SEO e otimização',
-    ],
-    icon: <Award className="w-4 h-4 sm:w-5 sm:h-5" />,
-  },
-];
+import { useTranslations } from 'next-intl';
 
 function TechBadge({ tech }: { tech: string }) {
   return (
@@ -194,13 +42,77 @@ function TechBadge({ tech }: { tech: string }) {
 
 export function ExperienceSection() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const t = useTranslations('experience');
+  const tItems = t.raw('items') as {
+    id: number; title: string; company: string; location: string;
+    period: string; achievements: string[]; description: string[];
+  }[];
+
+  const experiences = tItems.map((item, index) => ({
+    ...item,
+    type: index < 4 ? 'current' as const : 'past' as const,
+    techStack: [
+      ['Golang', 'React', 'AWS', 'PostgreSQL', 'Redis'],
+      ['Node.js', 'Golang', 'MongoDB', 'ElasticSearch', 'Docker'],
+      ['Next.js', 'Node.js', 'PostgreSQL', 'Stripe', 'Redis'],
+      ['React', 'Next.js', 'Tailwind', 'Mapbox', 'TypeScript'],
+      ['Next.js', 'React Native', 'Flutter', 'Java', 'Figma'],
+      ['Next.js', 'Express', 'MongoDB', 'TypeScript'],
+      ['React', 'Next.js', 'Node.js', 'Git', 'SEO'],
+    ][index] || [],
+    link: [
+      'https://mobinads.cloud',
+      'https://kialajobs.com',
+      'https://digitalsindico.com',
+      'https://neatxpress.org',
+      null,
+      'https://lexifytech.com',
+      null,
+    ][index] as string | null,
+    icon: [<Rocket key="r" className="w-4 h-4 sm:w-5 sm:h-5" />,
+           <Users key="u" className="w-4 h-4 sm:w-5 sm:h-5" />,
+           <Shield key="s" className="w-4 h-4 sm:w-5 sm:h-5" />,
+           <Code key="c" className="w-4 h-4 sm:w-5 sm:h-5" />,
+           <Zap key="z" className="w-4 h-4 sm:w-5 sm:h-5" />,
+           <TrendingUp key="t" className="w-4 h-4 sm:w-5 sm:h-5" />,
+           <Award key="a" className="w-4 h-4 sm:w-5 sm:h-5" />,
+          ][index],
+  }));
+
   const totalYears = `${new Date().getFullYear() - 2021}+`;
-  const stats = {
+  const statsValues = {
     totalYears: totalYears,
     companies: experiences.length,
     currentRole: experiences.filter((e) => e.type === 'current').length,
     techStack: [...new Set(experiences.flatMap((e) => e.techStack))].length,
   };
+
+  const stats = [
+    {
+      icon: <Award className="w-5 h-5" />,
+      label: t('stats.experience'),
+      value: statsValues.totalYears,
+      suffix: t('stats.experienceSuffix'),
+    },
+    {
+      icon: <Briefcase className="w-5 h-5" />,
+      label: t('stats.companies'),
+      value: statsValues.companies,
+      suffix: '',
+    },
+    {
+      icon: <Rocket className="w-5 h-5" />,
+      label: t('stats.projects'),
+      value: statsValues.currentRole,
+      suffix: t('stats.projectsSuffix'),
+    },
+    {
+      icon: <Code className="w-5 h-5" />,
+      label: t('stats.technologies'),
+      value: statsValues.techStack,
+      suffix: t('stats.technologiesSuffix'),
+    },
+  ];
 
   return (
     <section className="relative px-4 sm:px-6 lg:px-8 py-26 sm:py-20 lg:py-24 overflow-hidden">
@@ -214,55 +126,26 @@ export function ExperienceSection() {
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-primary-neon/20 bg-primary-neon/10 px-4 py-2 mb-5">
             <Briefcase className="w-4 h-4 text-primary-neon" />
-
             <span className="text-xs sm:text-sm font-medium text-primary-neon">
-              Trajetória Profissional
+              {t('badge')}
             </span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
-            Experiência{' '}
-            <span className="text-primary-neon">
-              Profissional
-            </span>
+            {t('title')}{' '}
+            <span className="text-primary-neon">{t('titleHighlight')}</span>
           </h2>
 
           <div className="w-24 h-1 rounded-full bg-linear-to-r from-primary-neon to-accent-purple mx-auto mt-5" />
 
           <p className="mt-6 max-w-2xl mx-auto text-sm sm:text-base text-zinc-400 leading-relaxed">
-            Mais de 5 anos desenvolvendo soluções modernas,
-            escaláveis e focadas em performance.
+            {t('subtitle')}
           </p>
         </motion.div>
 
         {/* STATS */}
         <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 mb-14">
-          {[
-            {
-              icon: <Award className="w-5 h-5" />,
-              label: 'Experiência',
-              value: stats.totalYears,
-              suffix: 'anos',
-            },
-            {
-              icon: <Briefcase className="w-5 h-5" />,
-              label: 'Empresas',
-              value: stats.companies,
-              suffix: '',
-            },
-            {
-              icon: <Rocket className="w-5 h-5" />,
-              label: 'Projetos',
-              value: stats.currentRole,
-              suffix: 'ativos',
-            },
-            {
-              icon: <Code className="w-5 h-5" />,
-              label: 'Tecnologias',
-              value: stats.techStack,
-              suffix: '+',
-            },
-          ].map((stat, index) => (
+          {stats.map((stat, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 25 }}
@@ -307,7 +190,6 @@ export function ExperienceSection() {
 
         {/* TIMELINE */}
         <div className="relative">
-          {/* linha */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-linear-to-b from-primary-neon via-accent-purple to-transparent" />
 
           <div className="space-y-8 sm:space-y-10">
@@ -336,7 +218,6 @@ export function ExperienceSection() {
                 onMouseEnter={() => setHoveredCard(exp.id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                {/* timeline dot */}
                 <div className="hidden md:flex absolute left-1/2 top-10 -translate-x-1/2 z-20">
                   <div className="w-12 h-12 rounded-full bg-linear-to-r from-primary-neon to-accent-purple flex items-center justify-center shadow-lg shadow-primary-neon/30">
                     {exp.icon}
@@ -363,7 +244,6 @@ export function ExperienceSection() {
                     hover:shadow-primary-neon/5
                   "
                 >
-                  {/* glow */}
                   <div className="absolute inset-0 bg-linear-to-r from-primary-neon/0 via-primary-neon/0 to-accent-purple/0 hover:from-primary-neon/5 hover:via-primary-neon/10 hover:to-accent-purple/5 transition-all duration-500" />
 
                   <div className="relative z-10 p-5 sm:p-6">
@@ -378,9 +258,8 @@ export function ExperienceSection() {
                           {exp.type === 'current' && (
                             <div className="flex items-center gap-1 rounded-full border border-green-500/30 bg-green-500/10 px-2 py-1">
                               <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-
                               <span className="text-[10px] text-green-400 font-medium uppercase">
-                                Atual
+                                {t('current')}
                               </span>
                             </div>
                           )}
@@ -394,7 +273,6 @@ export function ExperienceSection() {
                             className="inline-flex items-center gap-2 text-primary-neon font-medium hover:underline"
                           >
                             {exp.company}
-
                             <ExternalLink className="w-3 h-3" />
                           </a>
                         ) : (
@@ -421,7 +299,7 @@ export function ExperienceSection() {
 
                     {/* STACK */}
                     <div className="flex flex-wrap gap-2 mb-5">
-                      {exp.techStack.map((tech) => (
+                      {exp.techStack.map((tech: string) => (
                         <TechBadge key={tech} tech={tech} />
                       ))}
                     </div>
@@ -430,20 +308,18 @@ export function ExperienceSection() {
                     <div className="mb-5 rounded-2xl border border-white/5 bg-black/20 p-4">
                       <div className="flex items-center gap-2 mb-3">
                         <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-
                         <span className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                          Principais Resultados
+                          {t('keyResults')}
                         </span>
                       </div>
 
                       <div className="grid gap-3 sm:grid-cols-2">
-                        {exp.achievements.map((achievement, i) => (
+                        {exp.achievements.map((achievement: string, i: number) => (
                           <div
                             key={i}
                             className="flex items-start gap-2"
                           >
                             <ChevronRight className="w-4 h-4 mt-0.5 text-primary-neon shrink-0" />
-
                             <span className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
                               {achievement}
                             </span>
@@ -454,15 +330,12 @@ export function ExperienceSection() {
 
                     {/* description */}
                     <ul className="space-y-2">
-                      {exp.description.map((item, i) => (
+                      {exp.description.map((item: string, i: number) => (
                         <li
                           key={i}
                           className="flex items-start gap-2 text-zinc-400 text-xs sm:text-sm leading-relaxed"
                         >
-                          <span className="text-primary-neon mt-1">
-                            ▹
-                          </span>
-
+                          <span className="text-primary-neon mt-1">▹</span>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -483,11 +356,9 @@ export function ExperienceSection() {
         >
           <div className="flex flex-wrap items-center justify-center gap-3 rounded-full border border-white/10 bg-white/3 px-5 py-3 text-center backdrop-blur-xl">
             <Award className="w-4 h-4 text-primary-neon" />
-
             <span className="text-xs sm:text-sm text-zinc-300">
-              Disponível para novos desafios e oportunidades
+              {t('cta')}
             </span>
-
             <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
           </div>
         </motion.div>
